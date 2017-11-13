@@ -1,0 +1,45 @@
+
+.paras {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.paras .box {
+    width: 1200px;
+}
+
+.paras .box .title .text {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.paras .box .title .line {
+    height: 1px;
+    background-color: red;
+    margin-top: 10px;
+}
+
+
+.paras .box .content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+
+.paras .box .content .first {
+    flex: 2;
+    padding-right: 20px;
+}
+
+.paras .box .content .first .subTitle{
+    font-size: 18px;
+}
+
+.paras .box .content .first .text{
+    padding-top: 20px;
+}
+
+.paras.box .content .second {
+    flex: 1;
+}

@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>发展历程</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/slick.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/bread.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/about_Intro.css" rel="stylesheet">
+    
+
+    <style>
+        .timeBody {
+          margin: 30px 0px 0px 0px;
+          padding: 0;
+          background: white;
+          color: #323232;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 112.5%;
+          line-height: 1.6em;
+        }
+
+        .timeline {
+          position: relative;
+          width: 860px;
+          margin: 0px auto;
+          padding: 20px;
+          list-style-type: none;
+        }
+        @media (max-width: 860px) {
+          .timeline {
+            width: 100%;
+            padding: 4em 0 1em 0;
+          }
+        }
+        .timeline:before {
+          position: absolute;
+          left: 50%;
+          top: 0;
+          content: ' ';
+          display: block;
+          width: 6px;
+          height: 100%;
+          margin-left: -3px;
+          background: #d5d5d5;
+          z-index: 5;
+        }
+        .timeline li {
+          padding: 1em 0;
+        }
+        @media (max-width: 860px) {
+          .timeline li {
+            padding: 2em 0;
+          }
+        }
+        .timeline li::after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden;
+        }
+
+        .direction-l {
+          position: relative;
+          width: 380px;
+          float: left;
+          text-align: right;
+        }
+        @media (max-width: 860px) {
+          .direction-l {
+            float: none;
+            width: 100%;
+            text-align: center;
+          }
+        }
+        .direction-l .flag {
+          box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+        }
+        .direction-l .flag:after {
+          content: "";
+          position: absolute;
+          left: 100%;
+          top: 50%;
+          height: 0;
+          width: 0;
+          margin-top: -8px;
+          border: solid transparent;
+          border-left-color: #4396f9;
+          border-width: 8px;
+          pointer-events: none;
+        }
+        @media (max-width: 860px) {
+          .direction-l .flag:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -8px;
+            height: 0;
+            width: 0;
+            margin-left: -8px;
+            border: solid transparent;
+            border-bottom-color: white;
+            border-width: 8px;
+            pointer-events: none;
+          }
+        }
+        .direction-l .time-wrapper {
+          float: left;
+        }
+        @media (max-width: 860px) {
+          .direction-l .time-wrapper {
+            float: none;
+          }
+        }
+
+        .direction-r {
+          position: relative;
+          width: 380px;
+          float: right;
+        }
+        @media (max-width: 860px) {
+          .direction-r {
+            float: none;
+            width: 100%;
+            text-align: center;
+          }
+        }
+        .direction-r .flag {
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+        }
+        .direction-r .flag:after {
+          content: "";
+          position: absolute;
+          right: 100%;
+          top: 50%;
+          height: 0;
+          width: 0;
+          margin-top: -8px;
+          border: solid transparent;
+          border-right-color: #4396f9;
+          border-width: 8px;
+          pointer-events: none;
+        }
+        @media (max-width: 860px) {
+          .direction-r .flag:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -8px;
+            height: 0;
+            width: 0;
+            margin-left: -8px;
+            border: solid transparent;
+            border-bottom-color: white;
+            border-width: 8px;
+            pointer-events: none;
+          }
+        }
+        .direction-r .flag:before {
+          left: -40px;
+        }
+        .direction-r .time-wrapper {
+          float: right;
+        }
+        @media (max-width: 860px) {
+          .direction-r .time-wrapper {
+            float: none;
+          }
+        }
+
+        .flag-wrapper {
+          position: relative;
+          display: inline-block;
+          text-align: center;
+        }
+        @media (max-width: 860px) {
+          .flag-wrapper {
+            text-align: center;
+          }
+        }
+        .flag-wrapper .flag {
+          position: relative;
+          display: inline;
+          background: #4396f9;
+          color: white;
+          padding: 6px 30px;
+          border-radius: 5px;
+          font-weight: 400;
+          font-size: 14px;
+          text-align: left;
+        }
+        @media (max-width: 860px) {
+          .flag-wrapper .flag {
+            background: #4396f9;
+            z-index: 15;
+          }
+        }
+
+        .direction-l .flag:before,
+        .direction-r .flag:before {
+          position: absolute;
+          top: 50%;
+          right: -40px;
+          content: ' ';
+          display: block;
+          width: 20px;
+          height: 20px;
+          margin-top: -10px;
+          background: #fff;
+          border-radius: 10px;
+          border: 4px solid #d5d5d5;
+          z-index: 10;
+        }
+        @media (max-width: 860px) {
+          .direction-l .flag:before,
+          .direction-r .flag:before {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            content: ' ';
+            display: block;
+            margin-left: -10px;
+          }
+        }
+
+        .desc {
+          margin: 1em 0.75em 0 0;
+          font-size: 0.9em;
+          font-style: italic;
+          line-height: 1.5em;
+        }
+        .desc a {
+          color: #d5d5d5;
+          text-decoration: none;
+        }
+        .desc a:hover {
+          text-decoration: underline;
+        }
+        @media (max-width: 860px) {
+          .desc {
+            position: relative;
+            margin: 1em 1em 0 1em;
+            padding: 1em;
+            background: whitesmoke;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+            z-index: 15;
+          }
+        }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="header">
+      <div class="box">
+        <div class="logo"><img src="images/logo.png"/></div>
+        <div class="items">
+          <div class="item"> <a href="#">首页</a> </div>
+          <div class="item"> <a href="#">关于津驰</a> </div>  
+          <div class="item active"> <a href="#"  class="active">企业文化</a> </div>
+          <div class="item"> <a href="#">津驰产品</a> </div>
+          <div class="item"> <a href="#">新闻中心</a> </div>
+          <div class="item"> <a href="#">联系我们</a> </div>
+          <div class="item"> <a href="#">中/EN</a> </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner">
+        <img src="images/culture_decopic.png"/>
+    </div>
+
+    <div class="bread">
+        <div class = "box">
+            <div class="home"><img src="images/homeicon.png"/></div>
+            <div class="items">
+                <div class="item">首页></div>
+                <div class="item">关于津驰></div>
+                <div class="item">员工生活</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="box">
+            <div class="items">
+                <div class="item active">
+                    <div class="wrapper">
+                    <div class="mainTitle">发展历程</div>
+                    <div class="subTitle">History</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="wrapper">
+                    <div class="mainTitle">文化理念</div>
+                    <div class="subTitle">Culture</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="wrapper">
+                    <div class="mainTitle">员工生活</div>
+                    <div class="subTitle">Staff life</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="paras">
+        <div class="box">
+
+            <div class="title">
+                <div class="text">发展历程</div>
+                <div class="line"></div>
+            </div>
+
+            
+            <div class="timeBody"> 
+            <!-- The Timeline -->
+
+            <ul class="timeline" id = "culture_history_timeline">
+
+              <!-- Item 1 -->
+              <li>
+                <div class="direction-r">
+                  <div class="flag-wrapper">
+                    <span class="flag">2017</span>
+                  </div>
+                  <div class="desc">
+                    Som freelance Fullstack Developer arbejder jeg med et hav af kunder, hjemmesider og apps. Jeg har tidligere designet og udviklet hjemmesider og andre løsninger for arkitekter, bilforhandlere, skoler, designere, fotografer og manger flere. Læs mere: <a href="https://tristanwhite.info" target="_top">https://tristanwhite.info</a>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Item 2 -->
+              <li>
+                <div class="direction-l">
+                  <div class="flag-wrapper">
+                    <span class="flag">2016</span>
+                  </div>
+                  <div class="desc">
+                    Som <strong>IT-vejleder</strong> på Rundhøjskolen er jeg ansvarlig for indkøb opsætning og vedligeholdelse af skolens IT-udstyr. Envidere står jeg får udvikling og vedligeholdelse af skolens hjemmeside, samt diverse mindre projekter, infoskærme og mere. I det daglige står jeg for support af skolens IT-udstyr samt support for elever så vel som kollegaer. Jeg underviser ugentligt et IT-valghold.
+                  </div>
+                </div>
+              </li>
+
+              <!-- Item 3 -->
+              <li>
+                <div class="direction-r">
+                  <div class="flag-wrapper">
+                    <span class="flag">2013</span>
+                  </div>
+                  <div class="desc">
+                    Hos Serverhosting prøvede jeg kræfter diverse netværksteknologier. Jeg konfigurerede og installerede routere, switche, servere. Jeg ydede support for kunder, samt stod for indkøb af ny hardware.
+                  </div>
+                </div>
+              </li>
+              
+              
+              <!-- Item 4 -->
+              <li>
+                <div class="direction-l">
+                  <div class="flag-wrapper">
+                    <span class="flag">2008</span>
+                  </div>
+                  <div class="desc">
+                    Studerede IT-tekonologi på Aarhus Erhvervsakademi
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="footer">
+
+      <div class="box">
+
+      <div class="address">
+        <div class="wrapper">
+          <div class="district">中国湖北津驰硅材料有限科技公司版权所有 Copyright© 2017</div>
+          <div class="icp">鄂ICP备123456-1号</div>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="wrapper">
+          <div class="building"><img src="images/footer_locationicon.png"/> 武汉市汉阳区钟家村闽东国际商务大厦99900室</div>
+          <div class="phone"><img src="images/footer_phoneicon.png"/> 027-098766 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <img src="images/footer_mailicon.png"/>  1234232987@qq.com</div>
+        </div>
+      </div>
+
+      </div>
+
+    </div>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,41 @@
+.paras {
+    display: flex;
+    justify-content: center;
+}
+
+.paras .box {
+	min-height: 800px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.paras .box .outline {
+    flex: 1;
+    border-right: 1px solid rgb(204, 204, 204);
+    font-size: 18px;
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.paras .box .outline .item {
+	padding: 10px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.paras .box .outline .item .dota{
+	height: 10px;
+	width: 10px;
+	background: rgb(202,153,64);
+	margin-right: 10px;
+}
+
+.paras .box .detail {
+	flex: 5;
+}
+
+.footer {
+	margin-top: 0px;
+}

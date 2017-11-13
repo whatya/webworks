@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Wuhan Sport Goods EXPO</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/sign.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div id="logo">
+      <div class="row content">
+        <div class="col-md-8 brand"><img src="images/LOGO.png"></div>
+        <div class="col-md-4 timer ">
+          <div class="desc">时间：2018年10月17日~19日</div>
+          <div class="desc address">武汉国际会展中心（汉口武展）</div>
+          <div class="desc days">距离2018武汉体博会开幕还有<span id="remainDays">70</span>天!</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="menu">
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+
+              <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="index.html">首页</a></li>
+                  <li><a href="exhibition_about.html">关于展会</a></li>
+                  <li><a href="exhibitor_sign.html">展商</a></li>
+                  <li><a href="audience_sign.html">观众</a></li>
+                  <li><a href="events.html">同期活动</a></li>
+                  <li><a href="news.html">展会资讯</a></li>
+                  <li><a href="review.html">历届回顾</a></li>
+                  <li><a href="about_index.html">关于我们</a></li>
+                </ul>
+              </div>
+
+
+            </div>
+          </nav>
+    </div>
+
+    <div id="formBox">
+
+      <div class="sideBar">
+        <div class = "item line"><a href = "index_exhibitor_sign.html">参展申请</a></div>
+        <div class = "item line"><a href = "index_audience_sign.html" class="active">参观报名</a></div>
+        <div class = "item"><a href = "index_media_sign.html">媒体登记</a></div>
+      </div>
+
+      <div class="form">
+
+        <div class="fileds">
+
+          <div class="title">参观报名</div>
+
+          <div class="inputBox">
+            <div class="name">*所在单位：</div>
+
+            <div class="inputer">
+              <input type="text" name="" id="companyName">
+              <div class="filedLine"></div>
+            </div>
+            
+          </div>
+
+          <div class="inputBox">
+
+            <div class="name">*您的姓名：</div>
+
+            <div class="inputer">
+              <input type="text" name="" id="realname">
+              <div class="filedLine"></div>
+            </div>
+            
+          </div>
+
+          <div class="inputBox">
+
+            <div class="name">*手机号码：</div>
+
+            <div class="inputer">
+              <input type="text" name="" id="phone">
+              <div class="filedLine"></div>
+            </div>
+            
+          </div>
+
+          <div class="inputBox">
+
+            <div class="name">办公电话：</div>
+
+            <div class="inputer">
+              <input type="text" name="" id="officePhone">
+              <div class="filedLine"></div>
+            </div>
+            
+          </div>
+
+          <div class="inputBox">
+
+            <div class="name"> 电子邮箱：</div>
+
+            <div class="inputer">
+              <input type="text" name="" id="mail">
+              <div class="filedLine"></div>
+            </div>
+            
+          </div>
+
+          <div class="postBtn">
+            <button type="button" onclick="post()">提交</button>
+          </div>
+        </div>
+
+        <div class="paper">
+          <div class="title">联系我们：</div>
+          <div>颜茜 女士</div>
+          <div>电话：18672192011</div>
+          <div>电邮：735670201@qq.com</div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div id="footer">
+      <div class="colorLine"></div>
+      <div class="contact">
+
+        <div class="phone">
+          <p>地址：武汉市汉阳区钟家村闵东国际商务大厦3A1601室</p>
+          <p>电话：027 62430136，  18672192011 邮箱：735670201@qq.com</p>
+        </div>
+
+        <div class="icp">
+          <p>Copyright© 2017 武汉中兴博纳会展有限公司版权所有 All Rights Reserved. 备案号：鄂ICP备16016895号-1</p>
+        </div>
+        
+        
+      </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+        <script src="http://cdn.bootcss.com/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+        <script src="js/moment.js"></script>
+ <script src="js/makeDays.js"></script>
+
+    <script type="text/javascript">
+
+      function post() {
+
+        //值获取
+        var companyName = $("#companyName").val();
+        var realname    = $("#realname").val();
+        var phone       = $("#phone").val();
+        var officePhone = $("#officePhone").val();
+        var mail        = $("#mail").val();
+
+        //值验证
+        if (companyName == "" || realname == "" || phone == "") {
+           swal({title: "请输入完整的申请信息！",
+            text: "*号为必填项！",
+            type: "warning",
+            timer: 1200,
+            showConfirmButton: false
+          });
+           return;
+        }
+
+        if(!(/^1[34578]\d{9}$/.test(phone))){ 
+          swal({title: "请输入正确的手机号码！",
+            text: "*号为必填项！",
+            type: "warning",
+            timer: 1200,
+            showConfirmButton: false
+          });  
+          return; 
+        } 
+
+        var param = {"company": companyName,
+                    "name": realname,
+                    "phone": phone,
+                    "tele": officePhone,
+                    "mail": mail};
+
+        console.log(param);
+
+        //数据提交
+        $.ajax(  
+        {  
+        type:'post',  
+        url : 'http://39.108.95.14/api/apply/audience', 
+        dataType : 'text json',  
+        jsonp:"jsoncallback",  
+        data: param, 
+        success  : function(response) {  
+          swal({title: "报名成功！",
+            type: "success",
+            timer: 1200,
+            showConfirmButton: false
+          });  
+
+        },  
+        error : function(error) {  
+            swal({title: "报名失败！",
+            text: "请稍后再试！",
+            type: "warning",
+            timer: 1200,
+            showConfirmButton: false
+          });  
+        }  
+      }  
+      );
+
+
+
+
+      }
+
+     
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+* {
+	margin: 0;
+}
+
+body {
+	
+	font-family: "PingFangSC-Regular", "Microsoft YaHei";
+	/*字体润滑*/
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+}

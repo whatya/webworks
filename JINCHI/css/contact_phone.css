@@ -1,0 +1,37 @@
+
+.paras {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.paras .box {
+    width: 1200px;
+}
+
+.paras .box .title .text {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.paras .box .title .line {
+    height: 1px;
+    background-color: red;
+    margin-top: 10px;
+}
+
+
+.paras .box .content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+
+.paras .box .content .first .subTitle {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.paras .box .content .first .item {
+    margin-bottom: 8px;
+}
