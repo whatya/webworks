@@ -75,13 +75,21 @@ function coversMove() {
 
             $("#banner_images").html(coversHtml);
 
-                $('#banner_images').slick({
-                    arrows: false,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 3000,
-                });
+
+
+            $('#banner_images').slick({
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            });
+
+            setTimeout(function(){
+
+                $(".banner img").css("height","auto");
+
+            }, 1000);
 
 
         },  
@@ -91,6 +99,7 @@ function coversMove() {
 
         }  
     });
+
 }
 
 // 处理产品详情
