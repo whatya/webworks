@@ -15,6 +15,10 @@
     /* border: 1px dotted #cccccc; */
 }
 
+.header .box .logo{
+    cursor: pointer;
+}
+
 .header .box .items {
     display: flex;
 }

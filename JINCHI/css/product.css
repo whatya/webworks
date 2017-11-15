@@ -25,6 +25,10 @@
 	align-items: center;
 }
 
+.paras .box .outline .item:hover {
+	color:red;
+}
+
 .paras .box .outline .item .dota{
 	height: 10px;
 	width: 10px;
@@ -36,6 +40,23 @@
 	flex: 5;
 }
 
+.paras .box .detail .title{
+	text-align: center;
+	font-size: 30px;
+	margin-top: 30px;
+}
+
+.paras .box .detail .date{
+	text-align: center;
+	margin-top: 8px;
+	color: gray;
+}
+
+.paras .box .detail .content{
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
 .footer {
 	margin-top: 0px;
 }

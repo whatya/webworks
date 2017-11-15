@@ -20,7 +20,7 @@
 
     <div class="header">
       <div class="box">
-        <div class="logo"><img src="images/logo.png"/></div>
+        <div class="logo" id = "header_logo"><img src="images/logo.png"/></div>
         <div class="items">
           <div class="item active"> <a href="#" class="active">首页</a> </div>
           <div class="item"> <a href="#">关于津驰</a> </div>  
@@ -33,8 +33,12 @@
       </div>
     </div>
 
-    <div class="banner">
+    <div class="banner" id = "banner_images">
         <img src="images/banner1.png"/>
+        <img src="images/banner1.png"/>
+        <img src="images/banner1.png"/>
+        <img src="images/banner1.png"/>
+
     </div>
 
     <div class="about">
@@ -62,7 +66,7 @@
               <div class="subTitle">ABOUT JINCHI</div>
             </div>
             <div class="line"><hr/></div>
-            <div class="more"><button>MORE></button></div>
+            <div class="more"><button id = "index_more_btn">MORE></button></div>
           </div>
           <div class="photoAndContent">
             <div class="photo">
@@ -83,25 +87,29 @@
         <div class="topNews">
           <div class="title">
             <div class="text">
-              <p>津驰2017中期报告：核心业务稳健增长，拓展业务有序推进</p>
+              <p id = "topNews_title">津驰2017中期报告：核心业务稳健增长，拓展业务有序推进</p>
               <img src="images/index_newsicon.png"/>
             </div>
-            <div class="line"><hr/></div>
+            <div class="line"></div>
           </div>
           <div class="content">
+            <p id = "topNews_content">
               DeepMind当然不会错过星际；以及DeepMind选择的路径有点不一样。首先，赛场就不一样，Facebook在星际中搏杀，而DeepMind选择了星际2。其次，DeepMind没有直接推AI，而是搞了一套：SC2LE。2015年2月，也就在AlphaGo和李世乭下棋之前一年多，DeepMind第一次登上了《自然》封面，他们发表了一篇论文：Human-level control through deep reinforcement learning。这篇论文展示了DeepMind的算法如何学会了49种雅达利游戏，并在其中23种里击败人类。
+            </p>
           </div>
         </div>
 
         <div class="listNews">
           <div class="title">
             <div class="text">
-              <p>公司新闻</p>
-              <p>行业动态</p>
+              <p id = "listNews_companySelected">公司新闻</p>
+              <p id = "listNews_industrySelected">行业动态</p>
             </div>
-            <div class="line"><hr/></div>
+            <div class="line">
+              <div class="segment" id = "listNews_segment"></div>
+            </div>
           </div>
-          <div class="items">
+          <div class="items" id = "listNews_items">
             <div class="item">DeepMind当然不会错过星际；以及DeepMind选择的路径。</div>
             <div class="item">DeepMind当然不会错过星际；以及DeepMind选择的路径。</div>
             <div class="item">DeepMind当然不会错过星际；以及DeepMind选择的路径。</div>

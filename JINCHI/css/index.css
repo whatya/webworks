@@ -3,7 +3,16 @@
 hr {
     background-color: rgb(204, 204, 204);
 }
+/*轮播图*/
+.banner {
+    width: 100%;
+    height: auto;
+}
 
+/*.banner img{
+    width: 1920px;
+    height: 400px;
+}*/
 
 /* 企业宣传片和关于 start*/
 .about {
@@ -116,7 +125,17 @@ hr {
 }
 
 .news .box .title .line {
-    margin-top: -20px;
+    height: 1px;
+    background-color: rgb(204, 204, 204);
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.news .box .title .line .segment{
+    height: 1px;
+    background-color: red;
+    width: 100px;
+    margin-left: 20px;
 }
 
 .news .box .listNews .title .text {
@@ -126,6 +145,7 @@ hr {
 .news .box .listNews .title .text p {
     padding-right: 10px;
     padding-left:  30px;
+    cursor: pointer;
 }
 
 .news .box .topNews {
