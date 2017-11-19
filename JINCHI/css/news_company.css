@@ -1,4 +1,4 @@
-.paras .box .nextPre {
+/*.paras .box .nextPre {
 	width: 1200px;
 	display: flex;
 	align-items: center;
@@ -27,4 +27,96 @@
 	align-items: center;
 	cursor: pointer;
 }
+*/
 
+
+
+.paras .box .content {
+	width: 1200px;
+}
+
+.paras .box .content .items {
+	width: 100%;
+}
+
+.paras .box .content .items .item {
+	width: 100%;
+	display: flex;
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+	border-bottom: 2px solid rgb(204, 204, 204);
+}
+
+.paras .box .content .items .item .forFirst img {
+	width: 381px;
+	height: 286px;
+	margin-left: 30px;
+
+}
+
+.paras .box .content .items .item .index{
+	width: 100px;
+	margin-right: 20px;
+}
+
+.paras .box .content .items .item .index .text{
+	width: 60px;
+	height: 80px;
+	background: rgb(230, 230, 230);
+}
+
+.paras .box .content .items .item .index .text .day{
+	padding-top: 10px;
+	color: red;
+	font-size: 24px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.paras .box .content .items .item .index .text .yearAndMonth{
+	font-size: 12px;
+	text-align: center;
+}
+
+.paras .box .content .items .item .titleAndText .bigDate{
+
+	margin-bottom: 10px;
+	color: rgb(204, 204, 204);
+	font-size: 42px;
+
+}
+
+.paras .box .content .items .item .titleAndText{
+
+	min-width: 700px;
+
+}
+
+.paras .box .content .items .item .titleAndText .title{
+
+	color: black;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.paras .box .content .items .item .titleAndText .text{
+	font-size:10px;
+	margin-top: 14px;
+}
+
+.paras .box .content .items .item .titleAndText .moreDiv{
+	margin-top: 30px;
+	height: 60px;
+	border-radius: 10px;
+	background-color: rgb(230, 230, 230);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	color: red;
+}
+
+.paras .box .content .items .item .titleAndText .moreDiv img{
+	margin-right: 15px;
+}

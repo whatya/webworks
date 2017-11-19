@@ -1,0 +1,355 @@
+/homepage/all
+METHOD：GET\POST
+	{
+  "code": 200,
+  "msg": "success",
+  "data": {
+    "news": [  // 最新动态 上限20
+      {
+        "id": 10,
+        "browses": 0,
+        "title": "你好",
+        "url": null,
+        "status": 0, //0表示发布 -1表示删除
+        "createTime": 1500804168,
+        "author": "管理员",
+        "parent": 0,                //0展会动态1展商新闻2行业资讯
+        "content": "haohaohaoahoahaoahoahohaohaohfoadhfjihdsakfjksdf"
+      }
+    ],
+    "medias": [    //合作媒体  上限20
+      {
+        "id": 1,
+        "name": "媒体",
+        "type": 1, // 表示媒体类型 TODO
+        "image": "1",
+        "principal": "啊",
+        "phone": "11",
+        "tele": null,
+        "mail": null,
+        "address": null,
+        "url": "1",
+        "status": "1" //1表示首页推荐 0表示不推荐
+      }
+    ],
+    "address": "武汉国际博览中心",
+    "activities": [ // 同期活动   上限20
+      {
+        "id": 4,
+        "title": "你好",
+        "url": null, // url 应该是用不上
+        "status": 0, // 0表示发布 -1表示删除
+        "createTime": 1500803753,
+        "author": "管理员",
+        "browses": 0,
+        "content": "haohaohaoahoahaoahoahohaohaohfoadhfjihdsakfjksdf"
+      }
+    ],
+    "companys": [  // 展商推荐    上限20
+      {
+        "id": 1,
+        "name": "gongsi", // 公司名
+        "type": 1,        // 公司类型 待商榷
+        "image": "6",     // 图片链接
+        "principal": "yx", // 公司联系人
+        "phone": "1",      // 联系人电话        
+        "tele": null,      // 办公电话
+        "mail": null,
+        "status": 1,       // 1表示首页推荐 0表示不推荐
+        "address": "0",   
+        "url": "1"         // 点击链接
+      }
+    ],
+    "logo": "keykeykey", // 首页左上角logo链接
+    "id": 1,             // 没用的字段
+    "time": "2017年9月15日", // 首页右上角时间
+    "sliders": [  			// 首页图片滑窗   上限10
+      {
+        "id": 1,
+        "imgKey": "898908901890", // 图片链接 或者 key
+        "title": "第一张图片", 
+        "url": "www.baidu.com",   // 点击跳转链接
+        "status": 0,              // 0表示图片首页显示 -1 表示删除
+        "createTime": 15454545    // 上传时间
+      }
+    ],
+    "introduction": "中国已经中国已经中国" // 首页展会介绍
+  },
+  "description": null,  // 没用的字段
+  "total": 0,  // 没用的字段
+  "downloads": []  // 下载这边还没写
+}
+	
+/apply/audience
+METHOD:POST                    // 观众申请
+{
+	company required,  // 公司名 必填
+	name required,     // 人名 必填
+	phone required,    // 手机 必填
+	tele,			   // 办公电话
+	mail
+}
+
+/apply/company
+METHOD:POST                    // 展商申请
+{
+	name required,     // 公司名 必填
+	principal required,// 负责人名 必填
+	phone required,    // 手机 必填
+	tele,			   // 办公电话
+	mail,
+	address
+}
+
+/apply/media
+METHOD:POST                    // 媒体申请
+{
+	name required,     // 媒体名 必填
+	principal required,// 负责人名 必填
+	phone required,    // 手机 必填
+	tele,			   // 办公电话
+	mail
+}
+
+/apply/audience/list
+METHOD：GET\POST			   // 申请观众列表
+{
+  "code": 200,
+  "msg": "success",
+  "data": [
+    {
+      "id": 7,
+      "name": "观众yxjiao",
+      "type": null,
+      "image": null,
+      "phone": "1405555555",
+      "company": "第二公司",
+      "tele": "88888888",
+      "mail": "4555@123.com",
+      "address": "0",
+      "status": 0,
+      "applyTime": 1500795251
+    }
+  ],
+  "description": "默认返回第一页，每页20行",
+  "total": 1   // 数据总数用于分页 
+}
+/apply/company/list
+METHOD：GET\POST                // 申请展商列表
+{
+  "code": 200,
+  "msg": "success",
+  "data": [
+    {
+      "id": 3,
+      "name": "第一公司",
+      "principal": "yuxuanjiao", //负责人姓名
+      "phone": "140123456",
+      "tele": null,
+      "mail": null,
+      "address": null,
+      "applyTime": 1500795201    //申请时间
+    }
+  ],
+  "description": "默认返回第一页，每页20行",
+  "total": 2
+}
+/apply/media/list
+METHOD：GET\POST                      // 申请媒体列表
+{
+  "code": 200,
+  "msg": "success",
+  "data": [
+    {
+      "id": 31,
+      "name": "第一媒体",
+      "phone": "1405555555",
+      "principal": "焦宇轩",
+      "tele": "88888888",
+      "mail": "4555@123.com",
+      "address": null,
+      "applyTime": 1500790555
+    }
+  ],
+  "description": "默认返回第一页，每页20行",
+  "total": 30
+}
+
+/company/list
+METHOD：GET\POST                // 获取已通过申请的厂商列表
+可选输入参数： status(0,1)  1表示推荐厂商 0表示不推荐厂商 不填表示所有
+{
+  "code": 200,
+  "msg": "success",
+  "data": [
+    {
+      "id": 1,
+      "name": "gongsi",
+      "type": 1,
+      "image": "6",
+      "principal": "yx",
+      "phone": "1",
+      "tele": null,
+      "mail": null,
+      "status": 1,
+      "address": "0",
+      "url": "1"
+    }
+  ],
+  "description": null,
+  "total": 1
+}
+/company/edit/{id}        // id必填
+METHOD:POST              // 编辑展商信息
+输入参数均为选填
+    {
+      "name": "gongsi",
+      "type": 1,
+      "image": "6",
+      "principal": "yx",
+      "phone": "1",
+      "tele": null,
+      "mail": null,
+      "status": 1,
+      "address": "0",
+      "url": "1"
+    }
+返回：
+{
+    "code": 200,
+    "msg": "success",
+    "data": 1,           // 数据库修改行数
+    "description": null,
+    "total": 0
+}
+
+/company/add
+METHOD：POST               //上传展商信息
+    {
+      "name": "gongsi",    // 必填
+      "type": 1,
+      "image": "6",
+      "principal": "yx",    // 必填
+      "phone": "1",         // 必填
+      "tele": null,
+      "mail": null,
+      "status": 1,
+      "address": "0",
+      "url": "1"
+    }
+返回：
+{
+    "code": 200,
+    "msg": "success",
+    "data": 1,           // 数据库修改行数
+    "description": null,
+    "total": 0
+}
+
+/activities/list
+METHOD：GET/POST              // 获取同期活动列表 时间倒序
+可选参数 status(0,-1)         // 0发布-1删除   
+{
+    "code": 200,
+    "msg": "success",
+    "data": [
+        {
+            "id": 5,
+            "title": "你好",
+            "url": null,
+            "status": 0,  // 设置首页推荐
+            "createTime": 1500803765,
+            "author": "管理员",
+            "browses": 0,   // 浏览量，用不上
+            "content": "haohaohaoahoahaoahoahohaohaohfoadhfjihdsakfjksdf"
+        }
+    ],
+    "description": null,
+    "total": 4
+}
+/activities/detail/{id}        // 根据id获取活动详情
+/activities/edit/{id}          // 编辑 参照展商编辑
+/activities/upload
+METHOD:POST  
+输入参数
+{
+    "title": "你好",   必填
+    "url": null,
+    "status": 0,
+    "createTime": 1500803765,
+    "author": "管理员",
+    "browses": 0,
+    "content": "haohaohaoahoahaoahoahohaohaohfoadhfjihdsakfjksdf"  // 必填
+}
+
+/news/list                         // 展商资讯 列表
+METHOD:GET/POST
+{
+    "code": 200,
+    "msg": "success",
+    "data": [
+        {
+            "id": 3,
+            "browses": 0,
+            "title": "第三条新闻",
+            "url": "url",
+            "status": 1,
+            "createTime": 1500790552,
+            "author": "管理员",
+            "parent": 0,              // 表示所属栏目
+            "content": "45484848adfadf3333333"
+        }
+    ],
+    "description": null,
+    "total": 10
+}
+/news/detail/{id}
+/news/edit/{id}             //METHOD:POST
+/news/upload                //METHOD:POST
+输入
+{
+    "browses": 0,
+    "title": "第三条新闻",   //
+    "url": "url",
+    "status": 1,
+    "createTime": 1500790552,
+    "author": "管理员",       //  不必填 默认管理员 无用字段
+    "parent": 0,              // 表示所属栏目  必填
+    "content": "45484848adfadf3333333"   //   必填
+}
+
+/history/list          //上传往期回顾
+METHOD:GET/POST
+{
+    "code": 200,
+    "msg": "success",
+    "data": [
+        {
+            "id": 1,
+            "name": "你好",
+            "content": "haohaohaoahoahaoahoahohaohaohfoadhfjihdsakfjksdf"
+        }
+    ],
+    "description": null,
+    "total": 1
+}
+/news/detail/{id}
+/news/edit/{id}             //METHOD:POST
+/news/upload                //METHOD:POST
+{
+    "name": "你好",   //  必填
+    "content": "haohaohaoahoahaoahoahohaohaohfoadhfjihdsakfjksdf" // 必填
+}
+
+
+所有分页输入参数均为（可选）
+{
+	pageSize,
+	currentPage	
+}
+
+所有分页输出均包含total
+
+所有删除为将status设为-1，未写删除接口
+
+文件上传和下载列表还没写，明天见

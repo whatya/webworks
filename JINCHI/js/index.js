@@ -136,9 +136,6 @@ function productDetial(id) {
 //全局入口
 function APPInit() {
 
-    //处理轮播
-    coversMove();
-
     //导航栏添加点击事件
     makeNavClickable();
 
@@ -153,6 +150,9 @@ function APPInit() {
 
 
     if (document.title == "首页") {
+
+        //处理轮播
+        coversMove();
 
         //关于津驰更多点击按钮
         $("#index_more_btn").click(function(){
@@ -521,6 +521,16 @@ function APPInit() {
             }  
         });
 
+    } else if (document.title == "公司动态") {
+
+        //处理新闻列表
+        newsListAll(0, 1);
+
+    } else if (document.title == "行业新闻") {
+
+        //处理行业新闻列表
+        newsListAll(1, 1);
+
     }  else {
 
 
@@ -624,6 +634,113 @@ function homeTop4(type) {
             }
 
             $("#listNews_items").html(tempHTML);
+
+        },  
+        error : function() { 
+
+            console.log('获取首页数据失败');
+
+        }  
+    });
+
+}
+
+
+
+//处理新闻列表或者动态列表
+function newsListAll(type, page) {
+
+    var urlTemp = COMPANY_NEWS + "?pageSize=10&currentPage=" + page;
+
+    if (type == 1) {
+
+        urlTemp = INDUSTRY_NEWS + "&pageSize=10&currentPage=" + page;
+
+    }
+
+    $.ajax(  
+    {  
+        type:'get',  
+        url : urlTemp,  
+        dataType : 'text json',  
+                jsonp:"jsoncallback",  
+        success  : function(response) {  
+
+
+            //列表html拼接
+            var tempHTML = ""
+
+            var rows = response.rows;
+
+            if (page == 1) {
+
+                //初始化分页
+                $('.M-box').pagination({
+                    totalData:response.total,
+                    showData:10,
+                    callback:function(api){
+                        newsListAll(type, api.getCurrent());
+                    }
+                });
+
+            }
+
+            for (var i = 0; i < rows.length; i ++) {
+
+                var row   = rows[i];
+
+                var date  = new Date(row.createTimeStr);
+
+                var year  = date.getFullYear() + "";
+
+                var month = (date.getMonth() +1 ) + "";
+
+                var day   = date.getDate() + "";
+
+                var dayTitle = day;
+
+                var yearAndMonthTitle = year + "/" + month;
+
+                var fullTimeTitle = day + "/" + month + "," + year;
+
+                tempHTML  += "<div class='item'><div class='index'><div class='text'><div class='day'>" + day + "</div><div class='yearAndMonth'>" + yearAndMonthTitle + "</div></div></div><div class='titleAndText'><div class='bigDate'><span>" + fullTimeTitle + "</span></div><div class='title'>" + row.title + "</div><div class='text'> " + row.abstr + " </div><div class='moreDiv'><img src='images/news_detailicon.png'><span>查看详情</span></div></div><div class = 'forFirst'><img src='" + row.imgUrl + "'></div></div>";
+
+            }
+
+             $("#content_items").html(tempHTML);
+
+             //第一条最左边日期隐藏
+             var indexes = $(".paras .index");
+
+             $(indexes[0]).css("display", "none");
+
+             //隐藏剩余元素更多按钮
+             var moreDivs = $(".paras .moreDiv");
+
+             moreDivs.each(function(index, data){
+
+                if (index != 0) { $(data).css("display", "none"); }
+
+             });
+
+             //隐藏剩余元素右边图片
+             var feedIcons = $(".paras .forFirst");
+
+             feedIcons.each(function(index, data){
+
+                if (index != 0) { $(data).css("display", "none"); }
+
+             });
+
+             //隐藏剩余元素大标题
+             var bigtitles = $(".paras .bigDate");
+
+             bigtitles.each(function(index, data){
+
+                if (index != 0) { $(data).css("display", "none"); }
+
+             });
+
 
         },  
         error : function() { 
