@@ -30,6 +30,20 @@ hr {
 
 .about .box .video {
     flex: 1;
+    height: 284px;
+    width: 379px;
+}
+
+.about .box .video #videoCover{
+    height: 284px;
+    width: 379px;
+    cursor: pointer;
+}
+
+.about .box .video #videoPlayer{
+    height: 284px;
+    width: 379px;
+    display: none;
 }
 
 .about .box .profile {

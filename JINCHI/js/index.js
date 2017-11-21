@@ -15,8 +15,12 @@ var CULTURE_LIFE    = "http://120.78.206.170/api/culture/list?parent=2"
 var COMPANY_NEWS    = "http://120.78.206.170/api/news/list"
 var INDUSTRY_NEWS   = "http://120.78.206.170/api/news/list?parent=1"
 
+var NEWS_DETAIL     = "http://120.78.206.170/api/news/getById?id="
+
 var PRODUCTS_LIST   = "http://120.78.206.170/api/product/list"
 var PRODUCT_DETAIL  = "http://120.78.206.170/api/product/getById?id="
+
+
 
 // **************************************页面加载运行 start*************************************
 
@@ -150,6 +154,19 @@ function APPInit() {
 
 
     if (document.title == "首页") {
+
+        //处理视频
+        $("#videoCover").click(function(){
+            $("#videoCover").fadeOut();
+
+            setTimeout(function(){
+
+                $("#videoPlayer").fadeIn();
+
+            }, 500);
+            
+
+        });
 
         //处理轮播
         coversMove();
@@ -531,6 +548,14 @@ function APPInit() {
         //处理行业新闻列表
         newsListAll(1, 1);
 
+    } else if (document.title == "公司动态详情") {
+
+        makeDetail();
+
+    } else if (document.title == "行业新闻详情") {
+
+        makeDetail();
+
     }  else {
 
 
@@ -719,7 +744,32 @@ function newsListAll(type, page) {
 
              moreDivs.each(function(index, data){
 
-                if (index != 0) { $(data).css("display", "none"); }
+                if (index != 0) { 
+
+                    $(data).css("display", "none"); 
+
+                } else {
+
+                    //绑定点击事件
+                    $(data).click(function() {
+
+                        var bigID = rows[index].id;
+
+                        if (type == 0) {
+
+                            window.location.href = "news_detail.html?id=" + bigID + "&type=0";
+
+                        } else {
+
+                            window.location.href = "industry_detail.html?id=" + bigID + "&type=1";
+
+                        }
+                        
+
+                    });
+
+                }
+
 
              });
 
@@ -741,6 +791,31 @@ function newsListAll(type, page) {
 
              });
 
+             //标题添加点击事件
+             var clickbleTitles = $(".paras .content .items .title");
+
+             clickbleTitles.each(function(index, data){
+
+                 //绑定点击事件
+                    $(data).click(function() {
+
+                        var bigID = rows[index].id;
+
+                        if (type == 0) {
+
+                            window.location.href = "news_detail.html?id=" + bigID + "&type=0";
+
+                        } else {
+
+                            window.location.href = "industry_detail.html?id=" + bigID + "&type=1";
+
+                        }
+                        
+
+                    });
+
+             });
+
 
         },  
         error : function() { 
@@ -749,5 +824,165 @@ function newsListAll(type, page) {
 
         }  
     });
+
+}
+
+
+//处理公司新闻、行业新闻详情
+function makeDetail() {
+
+    var id = 0;
+    //获取页面URL传过来的ID
+    var url = location.search;
+
+    var type = 0;
+
+    if (url.indexOf("?") != -1) {  
+
+        var str = url.substr(1);  
+
+        var strs = str.split('&');  
+
+        if (strs.length > 1) {
+
+            var kvs = strs[0].split('=');
+
+            if (kvs.length == 2) {
+
+                var v = kvs[1];
+
+                id = v;
+
+            }
+
+            var kvs2 = strs[1].split('=');
+
+            if (kvs2.length == 2) {
+
+                var v = kvs2[1];
+
+                type = v;
+
+            }
+
+        }
+    }
+
+    //请求详情
+    var urlTemp = NEWS_DETAIL + id;
+
+    $.ajax(  
+    {  
+        type:'get',  
+        url : urlTemp,  
+        dataType : 'text json',  
+                jsonp:"jsoncallback",  
+        success  : function(response) {  
+
+            $("#detail_title").text(response.title);
+            $("#detail_date").text(response.createTimeStr);
+            $("#detail_content").html(response.content);
+
+
+        },  
+        error : function() { 
+
+            console.log('获取首页数据失败');
+
+        }  
+    });
+
+    //获取id数组，用于做上一条、下一条详情
+    var urlListTemp = COMPANY_NEWS + "?pageSize=100&currentPage=1";
+
+    if (type == 1) {
+
+        urlListTemp = INDUSTRY_NEWS + "&pageSize=100&currentPage=1";
+
+    }
+
+    var ids = [];
+
+    $.ajax(  
+    {  
+        type:'get',  
+        url : urlListTemp,  
+        dataType : 'text json',  
+                jsonp:"jsoncallback",  
+        success  : function(response) {  
+
+            for (var i = 0; i < response.rows.length; i++) {
+
+                ids.push(response.rows[i].id);
+
+            }
+
+
+        },  
+        error : function() { 
+
+            console.log('获取首页数据失败');
+
+        }  
+    });
+
+
+    //上一页新闻事件点击
+    $("#detail_pre").click(function(){
+
+        //获取当前详情页面id的Index
+         var currentIDInt = Number(id);
+
+         var currentIndex = ids.indexOf(currentIDInt);
+
+         var willBeIndex = currentIndex - 1;
+
+         if (willBeIndex >= 0) {
+
+            var willBeID = ids[willBeIndex];
+
+            if (type == 0) {
+
+                window.location.href = "news_detail.html?id=" + willBeID + "&type=0";
+
+            } else {
+
+                window.location.href = "industry_detail.html?id=" + willBeID + "&type=1";
+
+            }
+
+         }
+
+    });
+
+
+    //下一页新闻事件点击
+    $("#detail_next").click(function(){
+
+        //获取当前详情页面id的Index
+         var currentIDInt = Number(id);
+
+         var currentIndex = ids.indexOf(currentIDInt);
+
+         var willBeIndex = currentIndex + 1;
+
+         if (willBeIndex < ids.length) {
+
+            var willBeID = ids[willBeIndex];
+
+            if (type == 0) {
+
+                window.location.href = "news_detail.html?id=" + willBeID + "&type=0";
+
+            } else {
+
+                window.location.href = "industry_detail.html?id=" + willBeID + "&type=1";
+
+            }
+
+         }
+
+    });
+
 
 }

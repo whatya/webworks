@@ -1,0 +1,47 @@
+.paras .box .content .wrapper {
+	margin-bottom: 60px;
+}
+
+.paras .box .content .wrapper .detal_title{
+	margin-bottom: 20px;
+	font-size: 26px;
+	text-align: center;
+
+}
+
+.paras .box .content .wrapper .detail_date{
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+
+.paras .box .nextPre {
+	width: 1200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.paras .box .nextPre .pre{
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	border: 1px solid rgb(204, 204, 204);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-right: none;
+	cursor: pointer;
+}
+
+.paras .box .nextPre .next{
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	border: 1px solid rgb(204, 204, 204);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
