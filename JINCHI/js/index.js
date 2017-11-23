@@ -37,9 +37,9 @@ APPInit();
 
 //所有页面footer处理（本地化存储获取）
 function localFooterInit() {
-    $("#footer_address").text(localStorage.footer_address);
-    $("#footer_phone").text(localStorage.footer_phone);
-    $("#footer_mail").text(localStorage.footer_mail);
+    $("#footer_address").text(localStorage.getItem("footer_address"));
+    $("#footer_phone").text(localStorage.getItem("footer_phone"));
+    $("#footer_mail").text(localStorage.getItem("footer_mail"));
 
 }
 
@@ -193,9 +193,9 @@ function APPInit() {
                     $("#footer_mail").text(response.data.mail);
 
                     //存储footer数据到本地
-                    localStorage.footer_address = response.data.address
-                    localStorage.footer_phone   = response.data.phone
-                    localStorage.footer_mail    = response.data.mail
+                    localStorage.setItem("footer_address", response.data.address);
+                    localStorage.setItem("footer_phone", response.data.phone);
+                    localStorage.setItem("footer_mail", response.data.mail);
 
                     //处理关于津驰图片和文本
                     $("#about_img").attr('src',response.data.imgUrl);

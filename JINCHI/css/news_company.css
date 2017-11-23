@@ -11,14 +11,15 @@
 .paras .box .content .items .item {
 	width: 100%;
 	display: flex;
+	justify-content: space-between;
 	padding-bottom: 20px;
 	margin-bottom: 30px;
 	border-bottom: 2px solid rgb(204, 204, 204);
 }
 
 .paras .box .content .items .item .forFirst img {
-	width: 381px;
-	height: 286px;
+	width: 380px;
+	height: 285px;
 	margin-left: 30px;
 
 }
@@ -56,7 +57,7 @@
 }
 
 .paras .box .content .items .item .titleAndText{
-
+	flex: 1;
 	min-width: 700px;
 
 }
