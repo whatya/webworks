@@ -16,6 +16,7 @@
     font-size: 18px;
     padding-top: 30px;
     cursor: pointer;
+    min-width: 200px;
 }
 
 .paras .box .outline .item {
@@ -53,8 +54,8 @@
 }
 
 .paras .box .detail .content{
-	display: flex;
-	justify-content: center;
+	/*display: flex;*/
+	/*justify-content: center;*/
 	padding: 20px;
 }
 .footer {

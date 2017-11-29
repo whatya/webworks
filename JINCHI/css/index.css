@@ -98,10 +98,21 @@ hr {
 .about .box .profile .photoAndContent {
     border: 1px solid rgb(204, 204, 204);
     padding: 20px;
+    height: 284px;
+    overflow: hidden;
 }
 
 .about .box .profile .photo {
     padding-bottom: 20px;
+}
+
+.about .box .profile .photoAndContent .content p {
+    width: 734px;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;  /*限制在一个块元素显示的文本的行数*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .about .box .profile .title {

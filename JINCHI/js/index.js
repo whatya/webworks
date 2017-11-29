@@ -12,13 +12,18 @@ var CULTURE_HISTORY = "http://120.78.206.170/api/culture/list"
 var CULTURE_MISSION = "http://120.78.206.170/api/culture/list?parent=1"
 var CULTURE_LIFE    = "http://120.78.206.170/api/culture/list?parent=2"
 
-var COMPANY_NEWS    = "http://120.78.206.170/api/news/list"
+var COMPANY_NEWS    = "http://120.78.206.170/api/news/list?parent=0"
 var INDUSTRY_NEWS   = "http://120.78.206.170/api/news/list?parent=1"
 
 var NEWS_DETAIL     = "http://120.78.206.170/api/news/getById?id="
 
 var PRODUCTS_LIST   = "http://120.78.206.170/api/product/list"
 var PRODUCT_DETAIL  = "http://120.78.206.170/api/product/getById?id="
+
+var GLOBAL_FOOTER   = "http://120.78.206.170/api/homepage/footer"
+
+var CONTACT_PHONE   = "http://120.78.206.170/api/contact/list?parent=0"
+var CONTACT_HR      = "http://120.78.206.170/api/contact/list?parent=1"
 
 
 
@@ -35,11 +40,31 @@ APPInit();
 
 
 
-//所有页面footer处理（本地化存储获取）
-function localFooterInit() {
-    $("#footer_address").text(localStorage.getItem("footer_address"));
-    $("#footer_phone").text(localStorage.getItem("footer_phone"));
-    $("#footer_mail").text(localStorage.getItem("footer_mail"));
+//所有页面footer处理
+function footerInit() {
+
+    $.ajax(
+        {  
+            type:'get',  
+            url : GLOBAL_FOOTER,  
+            dataType : 'text json',  
+            jsonp:"jsoncallback",  
+            success  : function(response) {  
+
+                console.log(response.data);
+
+                //处理footer数据
+                $("#footer_address").text(response.data.address);
+                $("#footer_phone").text(response.data.phone);
+                $("#footer_email").text(response.data.mail);
+
+
+            },  
+            error : function() {  
+                console.log('获取首页数据失败')  
+            }  
+        }  
+    );
 
 }
 
@@ -67,7 +92,7 @@ function coversMove() {
 
             var coversHtml = "";
 
-            for(var i = 0; i < 4; i ++) {
+            for(var i = 0; i < response.rows.length; i ++) {
 
                 var file = response.rows[i];
 
@@ -147,7 +172,7 @@ function APPInit() {
     makeMenuClickable();
 
     //处理页脚本地数据
-    localFooterInit();
+    footerInit();
 
     //logo添加点击返回首页
     toHome();
@@ -168,6 +193,8 @@ function APPInit() {
 
         });
 
+
+
         //处理轮播
         coversMove();
 
@@ -177,8 +204,8 @@ function APPInit() {
         });
 
         //获取新闻以外的数据
-            $.ajax(  
-            {  
+        $.ajax(  
+        {  
                 type:'get',  
                 url : INDEX_URL,  
                 dataType : 'text json',  
@@ -186,16 +213,6 @@ function APPInit() {
                 success  : function(response) {  
 
                     console.log(response.data);
-
-                    //处理footer数据
-                    $("#footer_address").text(response.data.address);
-                    $("#footer_phone").text(response.data.phone);
-                    $("#footer_mail").text(response.data.mail);
-
-                    //存储footer数据到本地
-                    localStorage.setItem("footer_address", response.data.address);
-                    localStorage.setItem("footer_phone", response.data.phone);
-                    localStorage.setItem("footer_mail", response.data.mail);
 
                     //处理关于津驰图片和文本
                     $("#about_img").attr('src',response.data.imgUrl);
@@ -205,6 +222,10 @@ function APPInit() {
                     $("#sns_1").attr('src',response.data.mediaUrls[0]);
                     $("#sns_2").attr('src',response.data.mediaUrls[1]);
                     $("#sns_3").attr('src',response.data.mediaUrls[2]);
+
+                    //处理视频
+                    let videoPlayerFullURl = "http://player.youku.com/embed/" + response.data.videoUrl;
+                    $("#videoPlayer").attr('src',videoPlayerFullURl);
 
                 },  
                 error : function() {  
@@ -369,7 +390,6 @@ function APPInit() {
 
                     //处理文本
                     $("#about_advan_content1").text(response.rows[0].content);
-                    $("#about_advan_content2").text(response.rows[0].content);
 
                     //处理图片
                     $("#about_advan_img").attr('src',response.rows[0].imgUrls[0]);
@@ -556,11 +576,63 @@ function APPInit() {
 
         makeDetail();
 
+    } else if (document.title == "联系我们") {
+
+        makePhone(0);
+
+    } else if (document.title == "人力资源") {
+
+        makePhone(1);
+
     }  else {
 
 
 
     }
+
+}
+
+//处理联系我们
+function makePhone(type) {
+
+    var urlTemp = CONTACT_PHONE
+
+    if (type == 1) {
+
+        urlTemp = CONTACT_HR
+
+    }
+
+    $.ajax(  
+    {  
+            type:'get',  
+            url : urlTemp,  
+            dataType : 'text json',  
+            jsonp:"jsoncallback",  
+            success  : function(response) {  
+
+                console.log(response);
+
+                $("#contact_phone_title").text(response.rows[0].title);
+                $("#contact_phone_content").html(response.rows[0].content);
+
+                if (type == 0) {
+
+                    $("#contact_phone_img").attr('src',response.rows[0].imgUrl);
+
+                } else {
+                    let position = "url(" + response.rows[0].imgUrl + ")";
+                    $("#contact_phone_img").css("background-image", position);
+
+                }
+                
+
+            },  
+            error : function() {  
+                console.log('获取首页数据失败')  
+            }  
+        }  
+    );
 
 }
 
@@ -675,7 +747,7 @@ function homeTop4(type) {
 //处理新闻列表或者动态列表
 function newsListAll(type, page) {
 
-    var urlTemp = COMPANY_NEWS + "?pageSize=10&currentPage=" + page;
+    var urlTemp = COMPANY_NEWS + "&pageSize=10&currentPage=" + page;
 
     if (type == 1) {
 
@@ -691,6 +763,7 @@ function newsListAll(type, page) {
                 jsonp:"jsoncallback",  
         success  : function(response) {  
 
+            console.log(response);
 
             //列表html拼接
             var tempHTML = ""

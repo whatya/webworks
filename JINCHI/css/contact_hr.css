@@ -38,4 +38,13 @@
         display: flex;
         justify-content: space-between;
     }
+
+    .paras .box .content .wanted .first {
+        height: 364px;
+        text-align:justify
+
+        -moz-column-count:2;    /* Firefox */
+        -webkit-column-count:2; /* Safari 和 Chrome */
+        column-count:2;
+    }
     
