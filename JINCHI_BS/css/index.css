@@ -1,0 +1,29 @@
+.video-profile {
+	margin-top: 30px;
+}
+
+#video-header {
+	padding: 0;
+}
+
+.profile-media {
+	border: 1px solid #ccc;
+	padding: 20px;
+	max-height: 270px;
+}
+
+.video-text,
+.video-media,
+.profile-text,
+.profile-media {
+	margin-top: 15px;
+}
+
+.profile-media p {
+	margin-top: 10px;
+}
+
+.video-text, .profile-text {
+	margin-left: 0px;
+	margin-right: 0px;
+}
