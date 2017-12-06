@@ -1,0 +1,32 @@
+/* 底部地址联系方式 start */
+.footer {
+    background-color: rgb(242, 242, 242);
+    margin-top: 180px;
+    border-top: 3px solid rgb(204, 204, 204);
+}
+
+.footer .row {
+    height: 100%;
+}
+
+.footer .item {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footer .copyright{
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.footer p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 底部地址联系方式 end */

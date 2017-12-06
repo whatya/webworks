@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>发展历程</title>
+
+    <!-- Bootstrap -->
+    
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/slick.css"  rel="stylesheet">
+
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css"  rel="stylesheet">
+    <link href="css/bread.css"  rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .timeBody {
+          margin: 30px 0px 0px 0px;
+          padding: 0;
+          background: white;
+          color: #323232;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 112.5%;
+          line-height: 1.6em;
+        }
+
+        .timeline {
+          position: relative;
+          width: 860px;
+          margin: 0px auto;
+          padding: 20px;
+          list-style-type: none;
+        }
+        @media (max-width: 860px) {
+          .timeline {
+            width: 100%;
+            padding: 4em 0 1em 0;
+          }
+        }
+        .timeline:before {
+          position: absolute;
+          left: 50%;
+          top: 0;
+          content: ' ';
+          display: block;
+          width: 6px;
+          height: 100%;
+          margin-left: -3px;
+          background: #d5d5d5;
+          z-index: 5;
+        }
+        .timeline li {
+          padding: 1em 0;
+        }
+        @media (max-width: 860px) {
+          .timeline li {
+            padding: 2em 0;
+          }
+        }
+        .timeline li::after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden;
+        }
+
+        .direction-l {
+          position: relative;
+          width: 380px;
+          float: left;
+          text-align: right;
+        }
+        @media (max-width: 860px) {
+          .direction-l {
+            float: none;
+            width: 100%;
+            text-align: center;
+          }
+        }
+        .direction-l .flag {
+          box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+        }
+        .direction-l .flag:after {
+          content: "";
+          position: absolute;
+          left: 100%;
+          top: 50%;
+          height: 0;
+          width: 0;
+          margin-top: -8px;
+          border: solid transparent;
+          border-left-color: #4396f9;
+          border-width: 8px;
+          pointer-events: none;
+        }
+        @media (max-width: 860px) {
+          .direction-l .flag:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -8px;
+            height: 0;
+            width: 0;
+            margin-left: -8px;
+            border: solid transparent;
+            border-bottom-color: white;
+            border-width: 8px;
+            pointer-events: none;
+          }
+        }
+        .direction-l .time-wrapper {
+          float: left;
+        }
+        @media (max-width: 860px) {
+          .direction-l .time-wrapper {
+            float: none;
+          }
+        }
+
+        .direction-r {
+          position: relative;
+          width: 380px;
+          float: right;
+        }
+        @media (max-width: 860px) {
+          .direction-r {
+            float: none;
+            width: 100%;
+            text-align: center;
+          }
+        }
+        .direction-r .flag {
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+        }
+        .direction-r .flag:after {
+          content: "";
+          position: absolute;
+          right: 100%;
+          top: 50%;
+          height: 0;
+          width: 0;
+          margin-top: -8px;
+          border: solid transparent;
+          border-right-color: #4396f9;
+          border-width: 8px;
+          pointer-events: none;
+        }
+        @media (max-width: 860px) {
+          .direction-r .flag:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -8px;
+            height: 0;
+            width: 0;
+            margin-left: -8px;
+            border: solid transparent;
+            border-bottom-color: white;
+            border-width: 8px;
+            pointer-events: none;
+          }
+        }
+        .direction-r .flag:before {
+          left: -40px;
+        }
+        .direction-r .time-wrapper {
+          float: right;
+        }
+        @media (max-width: 860px) {
+          .direction-r .time-wrapper {
+            float: none;
+          }
+        }
+
+        .flag-wrapper {
+          position: relative;
+          display: inline-block;
+          text-align: center;
+        }
+        @media (max-width: 860px) {
+          .flag-wrapper {
+            text-align: center;
+          }
+        }
+        .flag-wrapper .flag {
+          position: relative;
+          display: inline;
+          background: #4396f9;
+          color: white;
+          padding: 6px 30px;
+          border-radius: 5px;
+          font-weight: 400;
+          font-size: 14px;
+          text-align: left;
+        }
+        @media (max-width: 860px) {
+          .flag-wrapper .flag {
+            background: #4396f9;
+            z-index: 15;
+          }
+        }
+
+        .direction-l .flag:before,
+        .direction-r .flag:before {
+          position: absolute;
+          top: 50%;
+          right: -40px;
+          content: ' ';
+          display: block;
+          width: 20px;
+          height: 20px;
+          margin-top: -10px;
+          background: #fff;
+          border-radius: 10px;
+          border: 4px solid #d5d5d5;
+          z-index: 10;
+        }
+        @media (max-width: 860px) {
+          .direction-l .flag:before,
+          .direction-r .flag:before {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            content: ' ';
+            display: block;
+            margin-left: -10px;
+          }
+        }
+
+        .desc {
+          margin: 1em 0.75em 0 0;
+          font-size: 0.9em;
+          font-style: italic;
+          line-height: 1.5em;
+        }
+        .desc a {
+          color: #d5d5d5;
+          text-decoration: none;
+        }
+        .desc a:hover {
+          text-decoration: underline;
+        }
+        @media (max-width: 860px) {
+          .desc {
+            position: relative;
+            margin: 1em 1em 0 1em;
+            padding: 1em;
+            background: whitesmoke;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+            z-index: 15;
+          }
+        }
+    </style>
+
+  </head>
+  <body>
+    
+
+
+
+
+
+
+
+
+    <!-- *****************************************导航栏 start*************************************** -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#jinchi-menu" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand " href="index.html">
+            <img alt="JINGCHI" src="images/logo.png">
+          </a>
+
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right" id="jinchi-menu">
+          <ul class="nav navbar-nav">
+            <li><a class="text-center">首页</a></li>
+            <li><a class="text-center">关于津驰</a></li>
+            <li><a class="text-center" id="active-index">企业文化</a></li>
+            <li><a class="text-center">津驰产品</a></li>
+            <li><a class="text-center">新闻中心</a></li>
+            <li><a class="text-center">联系我们</a></li>
+            <li><a class="text-center" id="zn-en">中/EN</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+    <!-- *****************************************导航栏 end  *************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- *****************************************通用导航栏start*************************************** -->
+    <div class="container-fluid" id="space-img">
+      
+      <img src="images/about_decopic.png"/ class="img-responsive">
+
+    </div>
+    
+
+    <div class="container" id="links">
+
+      <img src="images/homeicon.png" class="pull-left"/>
+      <div class="pull-left">
+      <span class="bread-link">企业文化></span>
+      <span class="bread-link">发展历程</span>
+      </div>
+
+    </div>
+
+    <div id="bread-line"></div>
+
+    <div class="container">
+      
+      <div class="rows" id="menus">
+        <div class="col-sm-3 menu active">
+
+            <div class="mainTitle text-center">发展历程</div>
+            <div class="subTitle text-center">History</div>
+
+        </div>
+        <div class="col-sm-3 menu">
+
+            <div class="mainTitle text-center">文化理念</div>
+            <div class="subTitle text-center">Culture</div>
+
+        </div>
+        <div class="col-sm-3 menu">
+
+            <div class="mainTitle text-center">员工生活</div>
+            <div class="subTitle text-center">Staff life</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- *****************************************通用导航栏 end*************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- *****************************************正文 start*************************************** -->
+
+    <div class="container" id="main-content">
+      
+      <span id="content-title">发展历程</span>
+      <div class="main-content-line"></div>
+
+    </div>
+
+    <div class="container">
+      <div class="timeBody"> 
+
+        <ul class="timeline" id = "culture_history_timeline"> </ul>
+
+      </div>
+    </div>
+
+
+    <!-- *****************************************正文   end*************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- *****************************************页脚  start  *************************************** -->
+    <div class="footer">
+      
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm-6 col-xs-6 item copyright">
+            <p>中国湖北津驰硅材料有限科技公司版权所有 Copyright© 2017</p>
+            <p>鄂ICP备123456-1号</p>
+          </div>
+
+          <div class="col-sm-6 col-xs-6 item contact-information">
+            <p><img src="images/footer_locationicon.png"/> <span id = "footer_address"> </span></p>
+            <p><img src="images/footer_phoneicon.png"/> <span id = "footer_phone"> </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <img src="images/footer_mailicon.png"/> <span id = "footer_email"> </span></p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- *****************************************页脚  end    *************************************** -->
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

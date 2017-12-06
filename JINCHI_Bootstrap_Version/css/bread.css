@@ -1,0 +1,72 @@
+#space-img {
+	padding: 0px;
+	margin-left: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+#links {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#links .bread-link {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#links img {
+	margin-top: 3px;
+	margin-right: 3px;
+}
+
+#bread-line {
+	height: 1px;
+	background-color: #ccc;
+}
+
+#menus {
+	padding-top: 20px;
+}
+
+#menus .menu {
+	width: 250px;
+    height: 90px;
+    border: 1px  solid rgb(204, 204, 204);
+    background-color: rgb(242, 242, 242);
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#menus .active {
+    background-color: rgb(222, 222, 222);
+}
+
+#menus .menu .mainTitle {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#menus .menu .subTitle {
+    font-size: 18px;
+    color: rgb(200, 200, 200);
+}
+
+
+#main-content {
+    margin-top: 40px;
+}
+
+#main-content #content-title {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+#main-content .main-content-line {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: red;
+    height: 1px;
+}

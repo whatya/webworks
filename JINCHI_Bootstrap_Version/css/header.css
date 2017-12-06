@@ -1,0 +1,55 @@
+body {
+	
+	font-family: "PingFangSC-Regular", "Microsoft YaHei";
+	/*字体润滑*/
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+}
+
+.navbar {
+	background: white;
+	border: none;
+	border-radius: 0;
+	height: 100px;
+	margin-bottom: 0;
+}
+
+.container {
+	height: 100%;
+}
+
+.navbar .navbar-header {
+	height: 100%;
+}
+
+.navbar .navbar-header a{
+	height: 100%;
+}
+
+.navbar .navbar-header button{
+	margin-top: 30px;
+}
+
+.navbar-nav li a {
+    line-height: 100px;
+    height: 100px;
+    padding-top: 0;
+    font-size: 18px;
+    width: 120px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#zn-en{
+	border-left: 1px solid #ccc;
+}
+
+#covers {
+	padding: 0;
+}
+
+#active-index {
+	background: red;
+	color: white;
+}
