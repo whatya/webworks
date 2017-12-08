@@ -60,8 +60,9 @@ function footerInit() {
 
 
             },  
-            error : function() {  
-                console.log('获取首页数据失败');
+            error : function(erro_msg) {  
+                console.log('获取页脚数据失败:');
+                console.log(erro_msg);
             }  
         }  
     );
@@ -122,9 +123,10 @@ function coversMove() {
 
 
         },  
-        error : function() {
+        error : function(erro_msg) {
 
-            console.log('获取首页数据失败');
+            console.log('获取轮播数据失败:');
+            console.log(erro_msg);
 
         }  
     });
@@ -153,9 +155,10 @@ function productDetial(id) {
             $("#product_content").html(response.content);
 
         },  
-        error : function() {
+        error : function(erro_msg) {
 
-            console.log('获取产品详情失败');
+            console.log('获取产品详情数据失败:');
+            console.log(erro_msg);
 
         }  
     });
@@ -239,7 +242,9 @@ function APPInit() {
 
                 },  
                 error : function(erro_msg) {  
+                    console.log('获取首页数据失败:');
                     console.log(erro_msg);
+                    console.log(erro_msg + "");
                 }  
             }  
         );
