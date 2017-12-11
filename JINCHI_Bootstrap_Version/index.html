@@ -28,6 +28,9 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+
   </head>
   <body>
     
@@ -126,6 +129,18 @@
           <div class="video-media">
             <img  id="videoCover" src = "images/video.png" class="img-responsive center-block"/>
             <!-- <iframe id="videoPlayer" height="100%" width="100%" src="http://player.youku.com/embed/XMzA5MDQwNTYxMg==" frameborder=0 allowfullscreen></iframe> -->
+            <!-- <video id="videoPlayer" src="http://www.zhangxinxu.com/study/media/cat.mp4" height="100%" width="100%" controls autobuffer></video> -->
+
+            <video id="videoPlayer" width="100%" height="100%" controls preload>
+              
+                <source src="http://www.zhangxinxu.com/study/media/cat.mp4" type="video/mp4" codecs = "avc1.42E01E,mp4a.40.2">
+
+                <!--[if lt IE 8]>
+                  <embed src="http://www.zhangxinxu.com/study/media/cat.mp4" width="100%" height="100%" autostart = false/>
+                <![endif]-->
+
+            </video>
+
           </div>
 
         </div>
@@ -144,7 +159,7 @@
           </div>
 
           <div class="profile-media">
-            <img src = "images/about1.png"  id="about_img" width="100%" height="152" />
+            <img id="about_img" width="100%" height="152" />
             <div>
               <p id="about_content"></p>
             </div>
@@ -178,7 +193,7 @@
         <div class="col-sm-8">
           
           <div class="snap-header">
-            <span class=" text-mainTitle" id="topNews_title"></span><img src="images/index_newsicon.png" class="pull-right" />
+            <span class=" text-mainTitle" id="topNews_title"></span><img class="pull-right" />
           </div>
 
           <div class="clearfix"></div>
@@ -252,7 +267,7 @@
         <div class="row">
           <div class="col-sm-6 col-xs-6 item copyright">
             <p>中国湖北津驰硅材料有限科技公司版权所有 Copyright© 2017</p>
-            <p>鄂ICP备123456-1号</p>
+            <p>鄂ICP备17028843号</p>
           </div>
 
           <div class="col-sm-6 col-xs-6 item contact-information">
@@ -265,13 +280,38 @@
 
     </div>
 
-
     <!-- *****************************************页脚  end    *************************************** -->
+
+
+    <div class="suspend">
+      <dl>
+        <dt class="IE6PNG"></dt>
+        <dd class="suspendQQ"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes"></a></dd>
+        <dd class="suspendTel"><a href="javascript:void(0);"></a></dd>
+      </dl>
+    </div>
 
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/index.js"></script>
+
+    <!-- 弹框begin -->
+
+    <script type="text/javascript">           
+    $(function(){
+      $(".suspend").mouseover(function() {
+            $(this).stop();
+            $(this).animate({width: 160}, 400);
+        });
+        $(".suspend").mouseout(function() {
+            $(this).stop();
+            $(this).animate({width: 40}, 400);
+        });
+    });
+    </script>
+
+    <!-- 弹框end -->
   </body>
 </html>

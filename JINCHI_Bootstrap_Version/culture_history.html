@@ -420,7 +420,7 @@
         <div class="row">
           <div class="col-sm-6 col-xs-6 item copyright">
             <p>中国湖北津驰硅材料有限科技公司版权所有 Copyright© 2017</p>
-            <p>鄂ICP备123456-1号</p>
+            <p>鄂ICP备17028843号</p>
           </div>
 
           <div class="col-sm-6 col-xs-6 item contact-information">
@@ -437,9 +437,34 @@
     <!-- *****************************************页脚  end    *************************************** -->
 
 
+    <div class="suspend">
+      <dl>
+        <dt class="IE6PNG"></dt>
+        <dd class="suspendQQ"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes"></a></dd>
+        <dd class="suspendTel"><a href="javascript:void(0);"></a></dd>
+      </dl>
+    </div>
+
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/slick.min.js"></script>
     <script src="js/index.js"></script>
+
+    <!-- 弹框begin -->
+
+    <script type="text/javascript">           
+    $(function(){
+      $(".suspend").mouseover(function() {
+            $(this).stop();
+            $(this).animate({width: 160}, 400);
+        });
+        $(".suspend").mouseout(function() {
+            $(this).stop();
+            $(this).animate({width: 40}, 400);
+        });
+    });
+    </script>
+
+    <!-- 弹框end -->
   </body>
 </html>

@@ -1,29 +1,29 @@
 
-var INDEX_URL       = "http://120.78.206.170/api/homepage/all"
+var INDEX_URL       = "http://www.jinchichina.com/api/homepage/all"
 
-var INDEX_BANNERS   = "http://120.78.206.170/api/banner/list"
+var INDEX_BANNERS   = "http://www.jinchichina.com/api/banner/list"
 
-var ABOUT_INTRO     = "http://120.78.206.170/api/about/list?parent=0"
-var ABOUT_MAN       = "http://120.78.206.170/api/about/list?parent=1"
-var ABOUT_HONOR     = "http://120.78.206.170/api/about/list"
-var ABOUT_ADVAN     = "http://120.78.206.170/api/about/list?parent=3"
+var ABOUT_INTRO     = "http://www.jinchichina.com/api/about/list?parent=0"
+var ABOUT_MAN       = "http://www.jinchichina.com/api/about/list?parent=1"
+var ABOUT_HONOR     = "http://www.jinchichina.com/api/about/list"
+var ABOUT_ADVAN     = "/api/about/list?parent=3"
 
-var CULTURE_HISTORY = "http://120.78.206.170/api/culture/list"
-var CULTURE_MISSION = "http://120.78.206.170/api/culture/list?parent=1"
-var CULTURE_LIFE    = "http://120.78.206.170/api/culture/list?parent=2"
+var CULTURE_HISTORY = "http://www.jinchichina.com/api/culture/list"
+var CULTURE_MISSION = "http://www.jinchichina.com/api/culture/list?parent=1"
+var CULTURE_LIFE    = "http://www.jinchichina.com/api/culture/list?parent=2"
 
-var COMPANY_NEWS    = "http://120.78.206.170/api/news/list?parent=0"
-var INDUSTRY_NEWS   = "http://120.78.206.170/api/news/list?parent=1"
+var COMPANY_NEWS    = "http://www.jinchichina.com/api/news/list?parent=0"
+var INDUSTRY_NEWS   = "http://www.jinchichina.com/api/news/list?parent=1"
 
-var NEWS_DETAIL     = "http://120.78.206.170/api/news/getById?id="
+var NEWS_DETAIL     = "http://www.jinchichina.com/api/news/getById?id="
 
-var PRODUCTS_LIST   = "http://120.78.206.170/api/product/list"
-var PRODUCT_DETAIL  = "http://120.78.206.170/api/product/getById?id="
+var PRODUCTS_LIST   = "http://www.jinchichina.com/api/product/list"
+var PRODUCT_DETAIL  = "http://www.jinchichina.com/api/product/getById?id="
 
-var GLOBAL_FOOTER   = "http://120.78.206.170/api/homepage/footer"
+var GLOBAL_FOOTER   = "http://www.jinchichina.com/api/homepage/footer"
 
-var CONTACT_PHONE   = "http://120.78.206.170/api/contact/list?parent=0"
-var CONTACT_HR      = "http://120.78.206.170/api/contact/list?parent=1"
+var CONTACT_PHONE   = "http://www.jinchichina.com/api/contact/list?parent=0"
+var CONTACT_HR      = "http://www.jinchichina.com/api/contact/list?parent=1"
 
 
 
@@ -197,10 +197,6 @@ function APPInit() {
         });
 
 
-
-        //处理轮播
-        coversMove();
-
         //关于津驰更多点击按钮
         $("#index_more_btn").click(function(){
             window.location.href = "about_Intro.html";
@@ -237,8 +233,8 @@ function APPInit() {
                     $("#sns_3").attr('src',response.data.mediaUrls[2]);
 
                     //处理视频
-                    var videoPlayerFullURl = "http://player.youku.com/embed/" + response.data.videoUrl;
-                    $("#videoPlayer").attr('src',videoPlayerFullURl);
+                    // var videoPlayerFullURl = "http://player.youku.com/embed/" + response.data.videoUrl;
+                    // $("#videoPlayer").attr('src',videoPlayerFullURl);
 
                 },  
                 error : function(erro_msg) {  
@@ -265,6 +261,15 @@ function APPInit() {
                     $("#topNews_title").text(firstNews.title);
 
                     $("#topNews_content").text(firstNews.abstr);
+
+                    $("#topNews_title").click(function() {
+
+                        var bigID = firstNews.id;
+
+                        window.location.href = "news_detail.html?id=" + bigID + "&type=0";
+                        
+
+                    });
 
 
                 },  
@@ -299,6 +304,10 @@ function APPInit() {
             homeTop4(1);
 
         });
+
+
+        //处理轮播
+        coversMove();
 
     } else if (document.title == "津驰介绍") {
 
@@ -771,6 +780,29 @@ function homeTop4(type) {
             }
 
             $("#listNews_items").html(tempHTML);
+
+            //处理点击事件
+            $("#listNews_items .item").each(function(index, data){
+
+                 //绑定点击事件
+                    $(data).click(function() {
+
+                        var bigID = response.rows[index].id;
+
+                        if (type == 0) {
+
+                            window.location.href = "news_detail.html?id=" + bigID + "&type=0";
+
+                        } else {
+
+                            window.location.href = "industry_detail.html?id=" + bigID + "&type=1";
+
+                        }
+                        
+
+                    });
+
+             });
 
         },  
         error : function() { 
