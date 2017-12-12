@@ -1,0 +1,36 @@
+#formBox .form .fileds .linkBox {
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	color: #347CFF;
+	border-top: 1px solid #cccccc;
+	height: 56px;
+	justify-content: space-between;
+
+	cursor: pointer;
+}
+
+#formBox .form .fileds .linkBox:hover {
+	color: #eb1b00;
+}
+
+#formBox .form .fileds .linkBox:last-child {
+	border-bottom: 1px solid #cccccc;
+}
+
+#formBox .form .fileds .linkBox .leading{
+	display: flex;
+	align-items: center;
+}
+
+#formBox .form .fileds .linkBox .traing{
+	margin-right: 20px;
+}
+
+#formBox .form .fileds .linkBox span{
+	margin-left: 16px;
+}
+
+#formBox .form .fileds .title{
+	margin-bottom: 30px;
+}

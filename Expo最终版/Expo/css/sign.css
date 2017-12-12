@@ -1,0 +1,120 @@
+#formBox {
+	margin: 0px auto 0px auto;
+	max-width: 1200px;
+	border-top: 1px solid #cccccc;
+	display: flex;
+}
+
+#formBox .sideBar {
+	width: 228px;
+	max-height: 800px;
+	padding-bottom: 60px;
+	background-color: #F2F2F2;
+	font-size: 18px;
+	padding-top: 30px;
+}
+
+#formBox .sideBar .item{
+	margin: 0px 20px 0px 20px;
+	padding: 20px 0px 20px 20px;
+	
+}
+
+
+
+#formBox .sideBar .item a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #333;
+}
+
+#formBox .sideBar a.active {
+	color: #eb1b00;
+}
+
+#formBox .sideBar .item a:hover {
+	color: #eb1b00;
+}
+
+#formBox .sideBar .line {
+	border-bottom: 1px solid #cccccc;
+}
+
+
+
+#formBox .form {
+	flex: 1;
+	display: flex;
+	margin-top: 50px;
+	margin-left: 20px;
+}
+
+#formBox .form .fileds {
+	flex: 1;
+	position: relative;
+}
+
+#formBox .form .fileds .title{
+	font-size: 26px;
+	color: #333333;
+	margin-bottom: 20px;
+}
+
+#formBox .form .fileds .inputBox{
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	color: #333333;
+	padding: 10px 0px 10px 0px;
+}
+
+#formBox .form .fileds .inputBox .name{
+	width: 90px;
+	text-align: right;
+}
+
+#formBox .form .fileds input{
+	width: 300px;
+	height: 100%;
+	border: none;
+	outline: none;
+	padding: 0px 4px 0px 4px;
+}
+
+#formBox .form .fileds .filedLine{
+	position: relative;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 4px;
+	border-bottom: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+
+#formBox .form .fileds button{
+	margin-left: 90px;
+	height: 40px;
+	width: 100px;
+	color: white;
+	border:none;
+	background-color: #347CFF;
+	font-size: 16px;
+	border-radius: 4px;
+	margin-top: 60px;
+
+}
+
+#formBox .form .paper {
+	width: 286px;
+	height: 188px;
+	background-color: #DEF0FC;
+	border-left: 3px solid #6CCDFF;
+	padding: 20px;
+	font-size: 16px;
+	color: #333333;
+}
+
+#formBox .form .paper .title{
+	margin-bottom: 20px;
+}

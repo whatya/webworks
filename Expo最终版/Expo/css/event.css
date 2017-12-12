@@ -1,0 +1,35 @@
+
+#formBox .form .fileds .item{
+	display: flex;
+	margin-bottom: 50px;
+	cursor: pointer;
+}
+
+#formBox .form .fileds .item .avatar{
+	width: 226px;
+}
+
+#formBox .form .fileds .item .content{
+	flex: 1;
+	padding: 2px 0px 2px 20px;
+}
+
+#formBox .form .fileds .item .content .head{
+	font-size: 18px;
+	color: #333333;
+}
+
+#formBox .form .fileds .item .content .date{
+	font-size: 16px;
+	color: #333333;
+	margin-top: 10px;
+}
+
+#formBox .form .fileds .item .content .text{
+	margin-top: 20px;
+	font-size: 16px;
+	color: #999999;
+	height: 90px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}

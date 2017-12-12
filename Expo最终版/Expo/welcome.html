@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Wuhan Sport Goods EXPO</title>
+    <link href="css/welcome.css" rel="stylesheet">
+
+    <style type="text/css">
+    	
+    </style>
+
+  </head>
+
+  <body>
+
+  <div class="bigBoss">
+
+  	<div><img src="images/logo01.png"></div>
+  	<div><img id="logoImg" src="images/logo02.png"></div>
+  	<div class="first">
+  		<span>时间：<span id="timeStr">2018年10月17日~19日</span></span>
+  		<span>地点：<span id="addressStr">武汉国际会展中心（汉口武展）</span></span>
+  	</div>
+
+  	<div class="second">
+  		<span>距离开幕还有</span>
+  		<span class="bigDigit" id ="remainDays">70</span>
+  		<span>天！</span>
+  	</div>
+
+  	<div class="third" onclick="toIndex()"><img src="images/BTNwelcome_normal.png"></div>
+  	<div class="forth">
+  		<span>Copyright© 2017 武汉中兴博纳会展有限公司版权所有 All Rights Reserved. 备案号：鄂ICP备16016895号-1</span>
+  	</div>
+  	
+  </div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/moment.js"></script>
+ <script src="js/makeDays.js"></script>
+ <script src="js/welcome.js"></script>
+
+  <script type="text/javascript">
+  	function toIndex() {
+  		window.location.href = "index.html"
+  	}
+
+    $(".third img").hover(function(){
+      $(".third img").attr("src", "images/BTNwelcome_highlight.png");
+    },function(){
+      $(".third img").attr("src", "images/BTNwelcome_normal.png");
+    });
+
+    fetchHomepage();
+  </script>
+    
+
+  </body>
+
+</html>

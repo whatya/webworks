@@ -1,0 +1,52 @@
+html,body {
+
+	font-family: "PingFangSC-Regular", "Microsoft YaHei";
+	/*字体润滑*/
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	height: 100%;
+	width: 100%;
+	background-image: url(../images/welcomeBG.png);
+	background-position: cover;
+
+	border: 0px;
+	margin: 0px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+
+
+}
+
+.bigBoss {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	margin-top: 200px;
+
+	font-size: 16px;
+	color: white;
+}
+
+.bigBoss .bigDigit {
+	font-size: 30px;
+}
+
+.first {
+	margin-top: 30px;
+}
+
+.third {
+	margin-top: 60px;
+	cursor: pointer;
+}
+
+.forth {
+	margin-top: 80px;
+	margin-bottom: 60px;
+}
