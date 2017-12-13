@@ -16,10 +16,9 @@
 
 
 .nextPre {
-	width: 1200px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	width: 330px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .nextPre .pre{
@@ -27,9 +26,7 @@
 	height: 40px;
 	text-align: center;
 	border: 1px solid rgb(204, 204, 204);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	padding-top: 8px;
 	border-right: none;
 	cursor: pointer;
 }
@@ -39,9 +36,7 @@
 	height: 40px;
 	text-align: center;
 	border: 1px solid rgb(204, 204, 204);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	padding-top: 8px;
 	cursor: pointer;
 }
 

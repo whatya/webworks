@@ -5,6 +5,10 @@
     border-top: 3px solid rgb(204, 204, 204);
 }
 
+#next-break {
+  display: none;
+}
+
 .footer .row {
     height: 100%;
 }
@@ -31,6 +35,27 @@
 .footer span {
     font-size: 18px;
     font-weight: bold;
+}
+
+
+@media (max-width: 767px) {
+  .footer .contact-information{
+    padding-left: 15px;
+    padding-top: 20px;
+  }
+
+  .footer .copyright{
+    height: 100%;
+    border: 0px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+
+  #next-break {
+    display: block;
+    height: 9px;
+  }
+
 }
 
 /* 底部地址联系方式 end */

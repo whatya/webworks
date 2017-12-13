@@ -6,7 +6,7 @@ var INDEX_BANNERS   = "http://www.jinchichina.com/api/banner/list"
 var ABOUT_INTRO     = "http://www.jinchichina.com/api/about/list?parent=0"
 var ABOUT_MAN       = "http://www.jinchichina.com/api/about/list?parent=1"
 var ABOUT_HONOR     = "http://www.jinchichina.com/api/about/list"
-var ABOUT_ADVAN     = "/api/about/list?parent=3"
+var ABOUT_ADVAN     = "http://www.jinchichina.com/api/about/list?parent=3"
 
 var CULTURE_HISTORY = "http://www.jinchichina.com/api/culture/list"
 var CULTURE_MISSION = "http://www.jinchichina.com/api/culture/list?parent=1"
@@ -859,13 +859,19 @@ function newsListAll(type, page) {
 
                 var row   = rows[i];
 
-                var date  = new Date(row.createTimeStr);
+                var timeRawStr = row.createTimeStr; //2017-11-12 12：20：30
 
-                var year  = date.getFullYear() + "";
+                var yearRawStr = timeRawStr.substr(0,4);
 
-                var month = (date.getMonth() +1 ) + "";
+                var monthRawStr = timeRawStr.substr(5,2);
 
-                var day   = date.getDate() + "";
+                var dayRawStr   = timeRawStr.substr(8,2);
+
+                var year  = yearRawStr + "";
+
+                var month = monthRawStr + "";
+
+                var day   = dayRawStr + "";
 
                 var dayTitle = day;
 
@@ -1060,7 +1066,7 @@ function makeDetail() {
     });
 
     //获取id数组，用于做上一条、下一条详情
-    var urlListTemp = COMPANY_NEWS + "?pageSize=100&currentPage=1";
+    var urlListTemp = COMPANY_NEWS + "&pageSize=100&currentPage=1";
 
     if (type == 1) {
 
