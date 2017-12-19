@@ -44,14 +44,14 @@ APPInit();
 function footerInit() {
 
     $.ajax(
-        {  
-            type:'get',  
-            url : GLOBAL_FOOTER,  
-            dataType : 'text json',  
-            jsonp:"jsoncallback",  
-            success  : function(response) {  
+        {
+            type:'get',
+            url : GLOBAL_FOOTER,
+            dataType : 'text json',
+            jsonp:"jsoncallback",
+            success  : function(response) {
 
-                console.log(response.data);
+                // console.log(response.data);
 
                 //处理footer数据
                 $("#footer_address").text(response.data.address);
@@ -59,12 +59,12 @@ function footerInit() {
                 $("#footer_email").text(response.data.mail);
 
 
-            },  
-            error : function(erro_msg) {  
-                console.log('获取页脚数据失败:');
-                console.log(erro_msg);
-            }  
-        }  
+            },
+            error : function(erro_msg) {
+                // console.log('获取页脚数据失败:');
+                // console.log(erro_msg);
+            }
+        }
     );
 
 }
@@ -83,13 +83,13 @@ function toHome() {
 //处理轮播
 function coversMove() {
 
-    $.ajax(  
-    {  
-        type:'get',  
-        url : INDEX_BANNERS,  
-        dataType : 'text json',  
-        jsonp:"jsoncallback",  
-        success  : function(response) {  
+    $.ajax(
+    {
+        type:'get',
+        url : INDEX_BANNERS,
+        dataType : 'text json',
+        jsonp:"jsoncallback",
+        success  : function(response) {
 
             var coversHtml = "";
 
@@ -122,13 +122,13 @@ function coversMove() {
             }, 1000);
 
 
-        },  
+        },
         error : function(erro_msg) {
 
-            console.log('获取轮播数据失败:');
-            console.log(erro_msg);
+            // console.log('获取轮播数据失败:');
+            // console.log(erro_msg);
 
-        }  
+        }
     });
 
 }
@@ -138,15 +138,15 @@ function productDetial(id) {
 
     var urlTemp = PRODUCT_DETAIL + id;
 
-    $.ajax(  
-    {  
-        type:'get',  
-        url : urlTemp,  
-        dataType : 'text json',  
-        jsonp:"jsoncallback",  
-        success  : function(response) {  
+    $.ajax(
+    {
+        type:'get',
+        url : urlTemp,
+        dataType : 'text json',
+        jsonp:"jsoncallback",
+        success  : function(response) {
 
-            console.log(response);
+            // console.log(response);
 
             $("#product_title").text(response.title);
 
@@ -154,20 +154,20 @@ function productDetial(id) {
 
             $("#product_content").html(response.content);
 
-        },  
+        },
         error : function(erro_msg) {
 
-            console.log('获取产品详情数据失败:');
-            console.log(erro_msg);
+            // console.log('获取产品详情数据失败:');
+            // console.log(erro_msg);
 
-        }  
+        }
     });
 
 }
 
 //全局入口
 function APPInit() {
-    
+
     //导航栏添加点击事件
     makeNavClickable();
 
@@ -192,7 +192,7 @@ function APPInit() {
                 $("#videoPlayer").fadeIn();
 
             }, 500);
-            
+
 
         });
 
@@ -201,18 +201,18 @@ function APPInit() {
         $("#index_more_btn").click(function(){
             window.location.href = "about_Intro.html";
         });
-        
-        
-        //获取新闻以外的数据
-        $.ajax(  
-        {  
-                type:'get',  
-                url : INDEX_URL,  
-                dataType : 'text json',  
-                jsonp:"jsoncallback",  
-                success  : function(response) {  
 
-                    console.log(response.data);
+
+        //获取新闻以外的数据
+        $.ajax(
+        {
+                type:'get',
+                url : INDEX_URL,
+                dataType : 'text json',
+                jsonp:"jsoncallback",
+                success  : function(response) {
+
+                    // console.log(response.data);
 
                     //处理关于津驰图片和文本
                     $("#about_img").attr('src',response.data.imgUrl);
@@ -224,7 +224,7 @@ function APPInit() {
                         aboutContentText = aboutContentText.substring(0, 130) + "...";
 
                     }
-                    
+
                     $("#about_content").text(aboutContentText);
 
                     //处理最下方三张图片
@@ -236,25 +236,25 @@ function APPInit() {
                     // var videoPlayerFullURl = "http://player.youku.com/embed/" + response.data.videoUrl;
                     // $("#videoPlayer").attr('src',videoPlayerFullURl);
 
-                },  
-                error : function(erro_msg) {  
-                    console.log('获取首页数据失败:');
-                    console.log(erro_msg);
-                    console.log(erro_msg + "");
-                }  
-            }  
+                },
+                error : function(erro_msg) {
+                    // console.log('获取首页数据失败:');
+                    // console.log(erro_msg);
+                    // console.log(erro_msg + "");
+                }
+            }
         );
 
         //处理第一条新闻
-        $.ajax(  
-            {  
-                type:'get',  
-                url : COMPANY_NEWS,  
-                dataType : 'text json',  
-                jsonp:"jsoncallback",  
-                success  : function(response) {  
+        $.ajax(
+            {
+                type:'get',
+                url : COMPANY_NEWS,
+                dataType : 'text json',
+                jsonp:"jsoncallback",
+                success  : function(response) {
 
-                    console.log(response);
+                    // console.log(response);
 
                     var firstNews = response.rows[0];
 
@@ -267,16 +267,16 @@ function APPInit() {
                         var bigID = firstNews.id;
 
                         window.location.href = "news_detail.html?id=" + bigID + "&type=0";
-                        
+
 
                     });
 
 
-                },  
-                error : function() {  
-                    console.log('获取首页数据失败');
-                }  
-            }  
+                },
+                error : function() {
+                    // console.log('获取首页数据失败');
+                }
+            }
         );
 
         //处理头四条新闻
@@ -312,15 +312,15 @@ function APPInit() {
     } else if (document.title == "津驰介绍") {
 
         //接口获取数据
-            $.ajax(  
-            {  
-                type:'get',  
-                url : ABOUT_INTRO,  
-                dataType : 'text json',  
-                jsonp:"jsoncallback",  
-                success  : function(response) {  
+            $.ajax(
+            {
+                type:'get',
+                url : ABOUT_INTRO,
+                dataType : 'text json',
+                jsonp:"jsoncallback",
+                success  : function(response) {
 
-                    console.log(response.rows);
+                    // console.log(response.rows);
 
                     //处理文本
                     $("#about_intro_content").text(response.rows[0].content);
@@ -331,25 +331,25 @@ function APPInit() {
                     $("#about_intro_img3").attr('src',response.rows[0].imgUrls[2]);
 
 
-                },  
-                error : function() {  
-                    console.log('获取首页数据失败');
-                }  
-            }  
+                },
+                error : function() {
+                    // console.log('获取首页数据失败');
+                }
+            }
         );
 
     } else if (document.title == "董事长致辞") {
 
         //接口获取数据
-            $.ajax(  
-            {  
-                type:'get',  
-                url : ABOUT_MAN,  
-                dataType : 'text json',  
-                jsonp:"jsoncallback",  
-                success  : function(response) {  
+            $.ajax(
+            {
+                type:'get',
+                url : ABOUT_MAN,
+                dataType : 'text json',
+                jsonp:"jsoncallback",
+                success  : function(response) {
 
-                    console.log(response.rows);
+                    // console.log(response.rows);
 
                     var manContent = response.rows[0].content;
 
@@ -372,25 +372,25 @@ function APPInit() {
                     //处理图片
                     $("#about_man_img").attr('src',response.rows[0].imgUrls[0]);
 
-                },  
-                error : function() {  
-                    console.log('获取首页数据失败');
-                }  
-            }  
+                },
+                error : function() {
+                    // console.log('获取首页数据失败');
+                }
+            }
         );
 
     } else if (document.title == "荣誉资质") {
 
         //接口获取数据
-            $.ajax(  
-            {  
-                type:'get',  
-                url : ABOUT_HONOR,  
-                dataType : 'text json',  
-                jsonp:"jsoncallback",  
-                success  : function(response) {  
+            $.ajax(
+            {
+                type:'get',
+                url : ABOUT_HONOR,
+                dataType : 'text json',
+                jsonp:"jsoncallback",
+                success  : function(response) {
 
-                    console.log(response.rows);
+                    // console.log(response.rows);
 
                     var tempHTML = ""
 
@@ -409,25 +409,25 @@ function APPInit() {
 
                     $("#about_honor_items").html(tempHTML);
 
-                },  
-                error : function() {  
-                    console.log('获取首页数据失败');
-                }  
-            }  
+                },
+                error : function() {
+                    // console.log('获取首页数据失败');
+                }
+            }
         );
 
     } else if (document.title == "企业优势") {
 
         //接口获取数据
-            $.ajax(  
-            {  
-                type:'get',  
-                url : ABOUT_ADVAN,  
-                dataType : 'text json',  
-                jsonp:"jsoncallback",  
-                success  : function(response) {  
+            $.ajax(
+            {
+                type:'get',
+                url : ABOUT_ADVAN,
+                dataType : 'text json',
+                jsonp:"jsoncallback",
+                success  : function(response) {
 
-                    console.log(response.rows);
+                    // console.log(response.rows);
 
                     //处理文本
                     $("#about_advan_content1").text(response.rows[0].content);
@@ -435,25 +435,25 @@ function APPInit() {
                     //处理图片
                     $("#about_advan_img").attr('src',response.rows[0].imgUrls[0]);
 
-                },  
-                error : function() {  
-                    console.log('获取首页数据失败');
-                }  
-            }  
+                },
+                error : function() {
+                    // console.log('获取首页数据失败');
+                }
+            }
         );
 
     } else if (document.title == "发展历程") {
 
         //接口获取数据
-            $.ajax(  
-            {  
-                type:'get',  
-                url : CULTURE_HISTORY,  
-                dataType : 'text json',  
-                jsonp:"jsoncallback",  
-                success  : function(response) {  
+            $.ajax(
+            {
+                type:'get',
+                url : CULTURE_HISTORY,
+                dataType : 'text json',
+                jsonp:"jsoncallback",
+                success  : function(response) {
 
-                    console.log(response.rows);
+                    // console.log(response.rows);
 
                     var tempHTML = ""
 
@@ -477,68 +477,68 @@ function APPInit() {
 
                     $("#culture_history_timeline").html(tempHTML);
 
-                },  
-                error : function() {  
-                    console.log('获取首页数据失败');
-                }  
-            }  
+                },
+                error : function() {
+                    // console.log('获取首页数据失败');
+                }
+            }
         );
 
     } else if (document.title == "文化理念") {
 
         //接口获取数据
-            $.ajax(  
-            {  
-                type:'get',  
-                url : CULTURE_MISSION,  
-                dataType : 'text json',  
-                jsonp:"jsoncallback",  
-                success  : function(response) {  
+            $.ajax(
+            {
+                type:'get',
+                url : CULTURE_MISSION,
+                dataType : 'text json',
+                jsonp:"jsoncallback",
+                success  : function(response) {
 
-                    console.log(response.rows);
+                    // console.log(response.rows);
 
                     $("#culture_mission_img").attr('src',response.rows[0].imgUrl);
 
-                },  
-                error : function() {  
-                    console.log('获取首页数据失败');
-                }  
-            }  
+                },
+                error : function() {
+                    // console.log('获取首页数据失败');
+                }
+            }
         );
 
     } else if (document.title == "员工生活") {
 
         //接口获取数据
-            $.ajax(  
-            {  
-                type:'get',  
-                url : CULTURE_LIFE,  
-                dataType : 'text json',  
-                jsonp:"jsoncallback",  
-                success  : function(response) {  
+            $.ajax(
+            {
+                type:'get',
+                url : CULTURE_LIFE,
+                dataType : 'text json',
+                jsonp:"jsoncallback",
+                success  : function(response) {
 
-                    console.log(response.rows);
+                    // console.log(response.rows);
 
                     $("#culture_life_img").attr('src',response.rows[0].imgUrl);
 
-                },  
-                error : function() {  
-                    console.log('获取首页数据失败');
-                }  
-            }  
+                },
+                error : function() {
+                    // console.log('获取首页数据失败');
+                }
+            }
         );
 
     } else if (document.title == "津驰产品") {
 
-        $.ajax(  
-        {  
-            type:'get',  
-            url : PRODUCTS_LIST,  
-            dataType : 'text json',  
-            jsonp:"jsoncallback",  
+        $.ajax(
+        {
+            type:'get',
+            url : PRODUCTS_LIST,
+            dataType : 'text json',
+            jsonp:"jsoncallback",
             success  : function(response) {
 
-                var rows = response.rows;  
+                var rows = response.rows;
 
                 //列表生成
                 var listHtml = "";
@@ -591,12 +591,12 @@ function APPInit() {
 
                 });
 
-            },  
+            },
             error : function() {
 
-                console.log('获取首页产品失败');
+                // console.log('获取首页产品失败');
 
-            }  
+            }
         });
 
     } else if (document.title == "公司动态") {
@@ -644,15 +644,15 @@ function makePhone(type) {
 
     }
 
-    $.ajax(  
-    {  
-            type:'get',  
-            url : urlTemp,  
-            dataType : 'text json',  
-            jsonp:"jsoncallback",  
-            success  : function(response) {  
+    $.ajax(
+    {
+            type:'get',
+            url : urlTemp,
+            dataType : 'text json',
+            jsonp:"jsoncallback",
+            success  : function(response) {
 
-                console.log(response);
+                // console.log(response);
 
                 $("#contact_phone_title").text(response.rows[0].title);
                 $("#contact_phone_content").html(response.rows[0].content);
@@ -670,13 +670,13 @@ function makePhone(type) {
                     $("#contact_phone_img").css("background-image", position);
 
                 }
-                
 
-            },  
-            error : function() {  
-                console.log('获取首页数据失败')  
-            }  
-        }  
+
+            },
+            error : function() {
+                // console.log('获取首页数据失败')  
+            }
+        }
     );
 
 }
@@ -693,7 +693,7 @@ function currentPageName() {
 //导航栏添加点击事件
 function makeNavClickable() {
 
-    var Urls = ["index.html", "about_Intro.html", "culture_history.html", "product.html", "news_company.html", "contact_phone.html", "#"];    
+    var Urls = ["index.html", "about_Intro.html", "culture_history.html", "product.html", "news_company.html", "contact_phone.html", "#"];
 
     var navs = $(".navbar .container .collapse .nav li");
 
@@ -714,34 +714,34 @@ function makeNavClickable() {
 // 中间菜单添加点击事件
 function makeMenuClickable(){
 
-    var Urls = { 
-        "Introduction"              : "about_Intro.html", 
-        "Chairman's speech"         : "about_man.html", 
-        "Honorary qualification"    : "about_honor.html", 
-        "Enterprise advantage"      : "about_advan.html", 
-        "History"                   : "culture_history.html", 
-        "Culture"                   : "culture_mission.html", 
-        "Staff life"                : "culture_life.html", 
-        "Company news"              : "news_company.html", 
-        "Industry news"             : "news_industry.html", 
-        "Contact"                   : "contact_phone.html", 
-        "Human Resource"            : "contact_hr.html", 
-    };    
-    
+    var Urls = {
+        "Introduction"              : "about_Intro.html",
+        "Chairman's speech"         : "about_man.html",
+        "Honorary qualification"    : "about_honor.html",
+        "Enterprise advantage"      : "about_advan.html",
+        "History"                   : "culture_history.html",
+        "Culture"                   : "culture_mission.html",
+        "Staff life"                : "culture_life.html",
+        "Company news"              : "news_company.html",
+        "Industry news"             : "news_industry.html",
+        "Contact"                   : "contact_phone.html",
+        "Human Resource"            : "contact_hr.html",
+    };
+
         var navs = $("#menus .menu");
-    
+
         navs.each(function(index, item){
 
             var pageName = $(item).find(".subTitle").text();
-    
+
             var pageUrl  = Urls[pageName];
-    
+
             $(item).click(function(){
-    
+
                 window.location.href = pageUrl;
-    
+
             });
-    
+
         });
 
 }
@@ -757,15 +757,15 @@ function homeTop4(type) {
 
     }
 
-    $.ajax(  
-    {  
-        type:'get',  
-        url : urlTemp,  
-        dataType : 'text json',  
-                jsonp:"jsoncallback",  
-        success  : function(response) {  
+    $.ajax(
+    {
+        type:'get',
+        url : urlTemp,
+        dataType : 'text json',
+                jsonp:"jsoncallback",
+        success  : function(response) {
 
-            console.log(response);
+            // console.log(response);
 
             var tempHTML = ""
 
@@ -798,18 +798,18 @@ function homeTop4(type) {
                             window.location.href = "industry_detail.html?id=" + bigID + "&type=1";
 
                         }
-                        
+
 
                     });
 
              });
 
-        },  
-        error : function() { 
+        },
+        error : function() {
 
-            console.log('获取首页数据失败');
+            // console.log('获取首页数据失败');
 
-        }  
+        }
     });
 
 }
@@ -827,15 +827,15 @@ function newsListAll(type, page) {
 
     }
 
-    $.ajax(  
-    {  
-        type:'get',  
-        url : urlTemp,  
-        dataType : 'text json',  
-                jsonp:"jsoncallback",  
-        success  : function(response) {  
+    $.ajax(
+    {
+        type:'get',
+        url : urlTemp,
+        dataType : 'text json',
+                jsonp:"jsoncallback",
+        success  : function(response) {
 
-            console.log(response);
+            // console.log(response);
 
             //列表html拼接
             var tempHTML = "";
@@ -895,9 +895,9 @@ function newsListAll(type, page) {
 
              moreDivs.each(function(index, data){
 
-                if (index != 0) { 
+                if (index != 0) {
 
-                    $(data).css("display", "none"); 
+                    $(data).css("display", "none");
 
                 } else {
 
@@ -915,7 +915,7 @@ function newsListAll(type, page) {
                             window.location.href = "industry_detail.html?id=" + bigID + "&type=1";
 
                         }
-                        
+
 
                     });
 
@@ -983,19 +983,19 @@ function newsListAll(type, page) {
                             window.location.href = "industry_detail.html?id=" + bigID + "&type=1";
 
                         }
-                        
+
 
                     });
 
              });
 
 
-        },  
-        error : function() { 
+        },
+        error : function() {
 
-            console.log('获取首页数据失败');
+            // console.log('获取首页数据失败');
 
-        }  
+        }
     });
 
 }
@@ -1010,11 +1010,11 @@ function makeDetail() {
 
     var type = 0;
 
-    if (url.indexOf("?") != -1) {  
+    if (url.indexOf("?") != -1) {
 
-        var str = url.substr(1);  
+        var str = url.substr(1);
 
-        var strs = str.split('&');  
+        var strs = str.split('&');
 
         if (strs.length > 1) {
 
@@ -1044,25 +1044,25 @@ function makeDetail() {
     //请求详情
     var urlTemp = NEWS_DETAIL + id;
 
-    $.ajax(  
-    {  
-        type:'get',  
-        url : urlTemp,  
-        dataType : 'text json',  
-                jsonp:"jsoncallback",  
-        success  : function(response) {  
+    $.ajax(
+    {
+        type:'get',
+        url : urlTemp,
+        dataType : 'text json',
+                jsonp:"jsoncallback",
+        success  : function(response) {
 
             $("#detail_title").text(response.title);
             $("#detail_date").text(response.createTimeStr);
             $("#detail_content").html(response.content);
 
 
-        },  
-        error : function() { 
+        },
+        error : function() {
 
-            console.log('获取首页数据失败');
+            // console.log('获取首页数据失败');
 
-        }  
+        }
     });
 
     //获取id数组，用于做上一条、下一条详情
@@ -1076,13 +1076,13 @@ function makeDetail() {
 
     var ids = [];
 
-    $.ajax(  
-    {  
-        type:'get',  
-        url : urlListTemp,  
-        dataType : 'text json',  
-                jsonp:"jsoncallback",  
-        success  : function(response) {  
+    $.ajax(
+    {
+        type:'get',
+        url : urlListTemp,
+        dataType : 'text json',
+                jsonp:"jsoncallback",
+        success  : function(response) {
 
             for (var i = 0; i < response.rows.length; i++) {
 
@@ -1091,12 +1091,12 @@ function makeDetail() {
             }
 
 
-        },  
-        error : function() { 
+        },
+        error : function() {
 
-            console.log('获取首页数据失败');
+            // console.log('获取首页数据失败');
 
-        }  
+        }
     });
 
 
