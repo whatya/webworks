@@ -37,10 +37,17 @@ body {
     height: 100px;
     padding-top: 0;
     font-size: 18px;
-    min-width: 100px;
     vertical-align: middle;
     cursor: pointer;
     background: white;
+}
+
+@media (min-width: 1200px) {
+
+	.navbar-nav li a {
+	    min-width: 120px;
+	}
+
 }
 
 #zn-en{
