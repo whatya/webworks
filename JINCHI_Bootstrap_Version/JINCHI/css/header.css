@@ -40,14 +40,7 @@ body {
     vertical-align: middle;
     cursor: pointer;
     background: white;
-}
-
-@media (min-width: 1200px) {
-
-	.navbar-nav li a {
-	    min-width: 120px;
-	}
-
+		width: 120px;
 }
 
 #zn-en{

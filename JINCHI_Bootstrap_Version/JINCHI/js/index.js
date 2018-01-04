@@ -33,11 +33,16 @@ var CONTACT_HR      = "http://www.jinchichina.com/api/contact/list?parent=1"
 
 //全局数据处理
 APPInit();
-
+JudgeBroswer();
 
 // **************************************页面加载运行 end  *************************************
 
-
+//判断浏览版本
+function JudgeBroswer() {
+    if (!$.support.leadingWhitespace) {
+        $(".navbar-nav li a").css("width","auto");
+    }
+}
 
 
 //所有页面footer处理
@@ -674,7 +679,7 @@ function makePhone(type) {
 
             },
             error : function() {
-                // console.log('获取首页数据失败')  
+                // console.log('获取首页数据失败')
             }
         }
     );
