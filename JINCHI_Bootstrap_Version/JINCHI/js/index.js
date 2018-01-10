@@ -698,7 +698,7 @@ function currentPageName() {
 //导航栏添加点击事件
 function makeNavClickable() {
 
-    var Urls = ["index.html", "about_Intro.html", "culture_history.html", "product.html", "news_company.html", "contact_phone.html", "#"];
+    var Urls = ["index.html", "about_Intro.html", "culture_history.html", "product.html", "news_company.html", "contact_phone.html", "JINCHIEN/index.html"];
 
     var navs = $(".navbar .container .collapse .nav li");
 

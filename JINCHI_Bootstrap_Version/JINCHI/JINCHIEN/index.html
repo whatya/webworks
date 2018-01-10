@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8;IE=9;IE=10;IE=11;IE=EDGE"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>HOME</title>
+
+
+
+    <!-- Bootstrap -->
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/slick.css"  rel="stylesheet">
+
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css"  rel="stylesheet">
+
+    <link href="css/index.css"  rel="stylesheet">
+
+    <!--[if lt IE 8]>
+    <script src="http://www.json.org/json2.js"></script>
+    <![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+  </head>
+  <body>
+
+
+
+
+
+
+
+
+
+    <!-- *****************************************导航栏 start*************************************** -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#jinchi-menu" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand " href="index.html">
+            <img alt="JINGCHI" src="images/logo.png">
+          </a>
+
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right" id="jinchi-menu">
+          <ul class="nav navbar-nav">
+            <li><a class="text-center" id="active-index">Home</a></li>
+            <li><a class="text-center">About</a></li>
+            <li><a class="text-center">Culture</a></li>
+            <li><a class="text-center">Product</a></li>
+            <li><a class="text-center">News</a></li>
+            <li><a class="text-center">Contact</a></li>
+            <li><a class="text-center" id="zn-en">CN/EN</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+    <!-- *****************************************导航栏 end  *************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="clearfix"></div>
+    <!-- *****************************************轮播图 start*************************************** -->
+    <div class="container-fluid" id="covers"></div>
+    <!-- *****************************************轮播图 end  *************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- *****************************************关于   start*************************************** -->
+    <div class="video-profile container">
+
+      <div class="row">
+
+        <div class="col-sm-4">
+
+          <div class="row video-text">
+            <div class="col-xs-3 col-sm-3"><hr></div>
+            <div class="col-xs-6 col-sm-6" id="video-header">
+              <div class="text-center text-mainTitle">ADVERTISING VIDEO</div>
+            </div>
+            <div class="col-xs-3 col-sm-3"><hr></div>
+          </div>
+
+          <div class="video-media">
+            <img  id="videoCover" src = "images/video.png" class="img-responsive center-block"/>
+            <iframe id="videoPlayer" class="video_iframe" style=" z-index:1; " src="http://v.qq.com/iframe/player.html?vid=k0015trfczz&amp;width=auto&amp;height=auto&amp;auto=0" allowfullscreen="" frameborder="0"></iframe>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-sm-8">
+
+          <div class="row profile-text">
+            <div class="col-xs-4 col-sm-4"><hr></div>
+            <div class="col-xs-4 col-sm-3" id="video-header">
+              <div class="text-center text-mainTitle">ABOUT JINCHI</div>
+            </div>
+            <div class="col-xs-4 col-sm-3"><hr></div>
+            <div class="col-xs-12 col-sm-2"><button id = "index_more_btn" class="pull-right">MORE></button></div>
+          </div>
+
+          <div class="profile-media">
+            <img id="about_img" width="100%" height="152" />
+            <div>
+              <p id="about_content"></p>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+    <!-- *****************************************关于   end  *************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- *****************************************新闻动态start*************************************** -->
+    <div class="snap-list container">
+
+      <div class="row">
+
+        <div class="col-sm-8">
+
+          <div class="snap-header">
+            <span class=" text-mainTitle" id="topNews_title"></span><img src="images/index_newsicon.png" class="pull-right" />
+          </div>
+
+          <div class="clearfix"></div>
+
+
+          <p id="topNews_content"></p>
+
+        </div>
+
+        <div class="col-sm-4">
+
+          <div class="list-header">
+            <span class=" text-mainTitle" id="listNews_companySelected">Company</span><span class=" text-mainTitle" id="listNews_industrySelected">Industry</span>
+
+          </div>
+          <div id="segment-line"></div>
+
+          <div id="listNews_items"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- *****************************************新闻动态  end*************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- *****************************************联系方式start*************************************** -->
+    <div class="sns container">
+
+      <div class="row">
+
+        <div class="col-sm-4 item"><img id = "sns_1" class="img-responsive center-block" src="images/index_media1.png"/></div>
+        <div class="col-sm-4 item"><img id = "sns_2" class="img-responsive center-block" src="images/index_media2.png"/></div>
+        <div class="col-sm-4 item"><img id = "sns_3" class="img-responsive center-block" src="images/index_media3.png"/></div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- *****************************************联系方式  end*************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- *****************************************页脚  start  *************************************** -->
+    <div class="footer">
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm-6 item copyright">
+            <p>HUBEI JINCHI ALL RIGHTS RESERVED COPYRIGHT 2017</p>
+            <p>ICP 17028843</p>
+          </div>
+
+          <div class="col-sm-6 item contact-information">
+            <p><img src="images/footer_locationicon.png"/> <span id = "footer_address"> </span></p>
+            <p><img src="images/footer_phoneicon.png"/> <span id = "footer_phone"> </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="next-break"></span>  <img src="images/footer_mailicon.png"/> <span id = "footer_email"> </span></p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- *****************************************页脚  end    *************************************** -->
+
+
+    <div class="suspend">
+      <dl>
+        <dt class="IE6PNG"></dt>
+        <dd class="suspendQQ"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes"></a></dd>
+        <dd class="suspendTel"><a href="javascript:void(0);"></a></dd>
+      </dl>
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- 弹框begin -->
+
+    <script type="text/javascript">
+    $(function(){
+      $(".suspend").mouseover(function() {
+            $(this).stop();
+            $(this).animate({width: 160}, 400);
+        });
+        $(".suspend").mouseout(function() {
+            $(this).stop();
+            $(this).animate({width: 40}, 400);
+        });
+    });
+    </script>
+
+    <!-- 弹框end -->
+  </body>
+</html>

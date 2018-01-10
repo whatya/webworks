@@ -1,0 +1,51 @@
+
+
+#paras_outline .item {
+	margin-top: 10px;
+	padding: 10px;
+	height: 40px;
+	font-size: 18px;
+}
+
+#paras_outline .item:hover {
+	color:red;
+	cursor: pointer;
+}
+
+#paras_outline .item .dota{
+	height: 10px;
+	width: 10px;
+	background: rgb(202,153,64);
+	margin-right: 10px;
+	margin-top: 7px;
+}
+
+#main-content {
+	margin-top: 0px;
+}
+
+#paras_outline {
+	border-right: 1px solid #ccc;
+	min-height: 800px;
+}
+
+#detail .title{
+	text-align: center;
+	font-size: 30px;
+	margin-top: 30px;
+}
+
+#detail .date{
+	text-align: center;
+	margin-top: 8px;
+	color: gray;
+}
+
+#detail .content{
+
+	padding: 20px;
+}
+
+.footer {
+	margin-top: 0px;
+}

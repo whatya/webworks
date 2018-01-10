@@ -1,0 +1,125 @@
+/* 底部地址联系方式 start */
+.footer {
+    background-color: rgb(242, 242, 242);
+    margin-top: 180px;
+    border-top: 3px solid rgb(204, 204, 204);
+}
+
+#next-break {
+  display: none;
+}
+
+.footer .row {
+    height: 100%;
+}
+
+.footer .item {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footer .copyright{
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.footer .contact-information{
+    padding-left: 80px;
+}
+
+.footer p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 767px) {
+  .footer .contact-information{
+    padding-left: 15px;
+    padding-top: 20px;
+  }
+
+  .footer .copyright{
+    height: 100%;
+    border: 0px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+
+  #next-break {
+    display: block;
+    height: 9px;
+  }
+
+}
+
+/* 底部地址联系方式 end */
+
+
+/*联系弹框 start*/
+
+.suspend {
+  width:40px;
+  height:198px;
+  position:fixed;
+  top:350px;
+  right:0;
+  overflow:hidden;
+  z-index:9999;
+}
+
+.suspend dl{
+  width:120px;
+  height:198px;
+  border-radius:25px 0 0 25px;
+  padding-left:40px;
+  box-shadow:0 0 5px #e4e8ec;
+}
+
+.suspend dl dt{
+  width:40px;
+  height:198px;
+  background:url(../images/suspend.png);
+  position:absolute;top:0;left:0;cursor:pointer;
+}
+
+.suspend dl dd.suspendQQ {
+  width:120px;
+  height:85px;
+  background:#ffffff;
+}
+
+.suspend dl dd.suspendQQ a {
+  width:120px;
+  height:85px;
+  display:block;
+  background:url(../images/suspend.png) -40px 0;
+  overflow:hidden;
+}
+
+.suspend dl dd.suspendTel {
+  width:120px;
+  height:112px;
+  background:#ffffff;
+  border-top:1px solid #e4e8ec;
+}
+
+.suspend dl dd.suspendTel a {
+  width:120px;
+  height:112px;
+  display:block;
+  background:url(../images/suspend.png) -40px -86px;
+  overflow:hidden;
+}
+* html .suspend{
+  position:absolute;
+  left:expression(eval(document.documentElement.scrollRight));
+  top:expression(eval(document.documentElement.scrollTop+200))
+}
+
+/*联系弹框 end*/
