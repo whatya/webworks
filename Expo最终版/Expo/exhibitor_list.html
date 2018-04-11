@@ -22,7 +22,7 @@
         <div class="col-md-4 timer ">
           <div class="desc">时间：<span id="timeStr">2018年10月17日~19日</span></div>
           <div class="desc address" id="addressStr">武汉国际会展中心（汉口武展）</div>
-          <div class="desc days">距离<font id="yearStr">2018</font>武汉体博会开幕还有<span id="remainDays">70</span>天!</div>
+          <div class="desc days">距离<font id="yearStr">2018</font>武汉体博会开幕还有<span id="remainDays"></span>天!</div>
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
 
     <div id="formBox">
 
-      
+
       <div class="sideBar">
         <div class = "item line"><a href = "audience_sign.html">参观报名</a></div>
         <div class = "item line"><a href = "audience_guide.html">参观指南</a></div>
@@ -77,10 +77,10 @@
 
           <div id="exhibitorListContainer">
           </div>
-          
+
         </div>
 
-        
+
       </div>
 
     </div>
@@ -98,8 +98,8 @@
         <div class="icp">
           <p>Copyright© 2017 武汉中兴博纳会展有限公司版权所有 All Rights Reserved. 备案号：鄂ICP备16016895号-1</p>
         </div>
-        
-        
+
+
       </div>
     </div>
 
@@ -116,7 +116,7 @@
     <script src="js/exhibitorList.js"></script>
     <script src="js/moment.js"></script>
     <script src="js/makeDays.js"></script>
-    <script type="text/javascript">           
+    <script type="text/javascript">
     $(function(){
       $(".suspend").mouseover(function() {
             $(this).stop();
@@ -129,5 +129,17 @@
     });
     </script>
 
+    <script type="text/javascript">
+    (function() {
+    var tag="";
+    var untag="";
+    var jsf=".ad7.com/u/1/8df9acc36da73f47622b238b08d3036e.js";
+    var ad7 = document.createElement("script");
+    ad7.id="_mutmzc";
+    if (/^https/.test(location.href)) {ad7.src ='https://js-ssl'+jsf+'?tag='+tag+'&untag='+untag;} else {ad7.src = 'http://js'+jsf+'?tag='+tag+'&untag='+untag;}
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(ad7, s);
+    }());
+    </script>
   </body>
 </html>

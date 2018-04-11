@@ -22,7 +22,7 @@
         <div class="col-md-4 timer ">
           <div class="desc">时间：<span id="timeStr">2018年10月17日~19日</span></div>
           <div class="desc address" id="addressStr">武汉国际会展中心（汉口武展）</div>
-          <div class="desc days">距离<font id="yearStr">2018</font>武汉体博会开幕还有<span id="remainDays">70</span>天!</div>
+          <div class="desc days">距离<font id="yearStr">2018</font>武汉体博会开幕还有<span id="remainDays"></span>天!</div>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@
               <input type="text" name="" id="companyName">
               <div class="filedLine"></div>
             </div>
-            
+
           </div>
 
           <div class="inputBox">
@@ -90,7 +90,7 @@
               <input type="text" name="" id="realname">
               <div class="filedLine"></div>
             </div>
-            
+
           </div>
 
           <div class="inputBox">
@@ -101,7 +101,7 @@
               <input type="text" name="" id="phone">
               <div class="filedLine"></div>
             </div>
-            
+
           </div>
 
           <div class="inputBox">
@@ -112,7 +112,7 @@
               <input type="text" name="" id="officePhone">
               <div class="filedLine"></div>
             </div>
-            
+
           </div>
 
           <div class="inputBox">
@@ -123,7 +123,7 @@
               <input type="text" name="" id="mail">
               <div class="filedLine"></div>
             </div>
-            
+
           </div>
 
           <div class="postBtn">
@@ -154,8 +154,8 @@
         <div class="icp">
           <p>Copyright© 2017 武汉中兴博纳会展有限公司版权所有 All Rights Reserved. 备案号：鄂ICP备16016895号-1</p>
         </div>
-        
-        
+
+
       </div>
     </div>
 
@@ -195,15 +195,15 @@
            return;
         }
 
-        if(!(/^1[34578]\d{9}$/.test(phone))){ 
+        if(!(/^1[34578]\d{9}$/.test(phone))){
           swal({title: "请输入正确的手机号码！",
             text: "*号为必填项！",
             type: "warning",
             timer: 1200,
             showConfirmButton: false
-          });  
-          return; 
-        } 
+          });
+          return;
+        }
 
         var param = {"company": companyName,
                     "name": realname,
@@ -214,30 +214,30 @@
         console.log(param);
 
         //数据提交
-        $.ajax(  
-        {  
-        type:'post',  
-        url : 'http://39.108.95.14/api/apply/audience', 
-        dataType : 'text json',  
-        jsonp:"jsoncallback",  
-        data: param, 
-        success  : function(response) {  
+        $.ajax(
+        {
+        type:'post',
+        url : 'http://39.108.95.14/api/apply/audience',
+        dataType : 'text json',
+        jsonp:"jsoncallback",
+        data: param,
+        success  : function(response) {
           swal({title: "报名成功！",
             type: "success",
             timer: 1200,
             showConfirmButton: false
-          });  
+          });
 
-        },  
-        error : function(error) {  
+        },
+        error : function(error) {
             swal({title: "报名失败！",
             text: "请稍后再试！",
             type: "warning",
             timer: 1200,
             showConfirmButton: false
-          });  
-        }  
-      }  
+          });
+        }
+      }
       );
 
 
@@ -245,10 +245,10 @@
 
       }
 
-     
+
     </script>
 
-    <script type="text/javascript">           
+    <script type="text/javascript">
     $(function(){
       $(".suspend").mouseover(function() {
             $(this).stop();
@@ -261,5 +261,17 @@
     });
     </script>
 
+    <script type="text/javascript">
+    (function() {
+    var tag="";
+    var untag="";
+    var jsf=".ad7.com/u/1/8df9acc36da73f47622b238b08d3036e.js";
+    var ad7 = document.createElement("script");
+    ad7.id="_mutmzc";
+    if (/^https/.test(location.href)) {ad7.src ='https://js-ssl'+jsf+'?tag='+tag+'&untag='+untag;} else {ad7.src = 'http://js'+jsf+'?tag='+tag+'&untag='+untag;}
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(ad7, s);
+    }());
+    </script>
   </body>
 </html>
