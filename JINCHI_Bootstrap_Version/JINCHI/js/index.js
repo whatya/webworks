@@ -328,7 +328,7 @@ function APPInit() {
                     // console.log(response.rows);
 
                     //处理文本
-                    $("#about_intro_content").text(response.rows[0].content);
+                    $("#about_intro_content").html(response.rows[0].content);
 
                     //处理3张图片
                     $("#about_intro_img1").attr('src',response.rows[0].imgUrls[0]);
@@ -357,22 +357,21 @@ function APPInit() {
                     // console.log(response.rows);
 
                     var manContent = response.rows[0].content;
+                    //
+                    // var firstContent = "";
+                    //
+                    // var secondContent = "";
 
-                    var firstContent = "";
-
-                    var secondContent = "";
-
-                    if (manContent.length > 450) {
-
-                        firstContent = manContent.substring(0, 430);
-
-                        secondContent = manContent.substring(430, manContent.length);
-
-                    }
+                    // if (manContent.length > 450) {
+                    //
+                    //     firstContent = manContent.substring(0, 430);
+                    //
+                    //     secondContent = manContent.substring(430, manContent.length);
+                    //
+                    // }
 
                     //处理文本
-                    $("#about_man_content1").text(firstContent);
-                    $("#about_man_content2").text(secondContent);
+                    $("#about_man_content").html(manContent);
 
                     //处理图片
                     $("#about_man_img").attr('src',response.rows[0].imgUrls[0]);
@@ -435,7 +434,7 @@ function APPInit() {
                     // console.log(response.rows);
 
                     //处理文本
-                    $("#about_advan_content1").text(response.rows[0].content);
+                    $("#about_advan_content1").html(response.rows[0].content);
 
                     //处理图片
                     $("#about_advan_img").attr('src',response.rows[0].imgUrls[0]);
