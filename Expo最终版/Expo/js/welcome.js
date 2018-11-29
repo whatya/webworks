@@ -30,6 +30,8 @@ function handleHomepage(data) {
         localStorage.setItem("beginTime", data.beginTime);
         localStorage.setItem("timeStr", data.time);
         localStorage.setItem("addressStr", data.address);
+        localStorage.setItem("officeTel", data.tele);
+        localStorage.setItem("officeAddr", data.addre);
     } catch (error) {
         alert("在隐私模式下浏览时间显示可能有误，请见谅！");
     }

@@ -262,6 +262,8 @@ function handleDownloads(files) {
     $("#home_hdownloadsContainer").html(downloadsHtml)
 }
 
+
+
 function toEventsDetail(id) {
     window.location.href= "event_detail.html?id=" + id;
 }

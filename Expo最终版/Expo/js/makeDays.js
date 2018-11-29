@@ -6,6 +6,18 @@ logo.click(function(){
 
 $("#timeStr").text(localStorage.getItem("timeStr"));
 $("#addressStr").text(localStorage.getItem("addressStr"));
+
+// 设置页脚地址和电话
+// $("#timeStr").text(localStorage.getItem("officeTel"));
+// $("#addressStr").text(localStorage.getItem("officeAddr"));
+var officeAddresNode  = $("#footer .contact .phone p:nth-child(1)");
+var officeTelNode     = $("#footer .contact .phone p:nth-child(2)");
+var officeAddressText = "地址： " + localStorage.getItem("officeAddr");
+var officeTelText     = "电话： " + localStorage.getItem("officeTel") + "  邮箱：735670201@qq.com";
+
+officeTelNode.text(officeTelText);
+officeAddresNode.text(officeAddressText);
+
 // 计算距开幕的时间
 function caculateRemainDays() {
 	var endTime = localStorage.getItem("beginTime");

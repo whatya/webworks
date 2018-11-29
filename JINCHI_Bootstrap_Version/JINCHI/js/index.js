@@ -224,13 +224,13 @@ function APPInit() {
 
                     var aboutContentText = response.data.introduction;
 
-                    if (aboutContentText.length > 130) {
+                    // if (aboutContentText.length > 130) {
 
-                        aboutContentText = aboutContentText.substring(0, 130) + "...";
+                    //     aboutContentText = aboutContentText.substring(0, 130) + "...";
 
-                    }
+                    // }
 
-                    $("#about_content").text(aboutContentText);
+                    $("#about_content").html(aboutContentText);
 
                     //处理最下方三张图片
                     $("#sns_1").attr('src',response.data.mediaUrls[0]);
