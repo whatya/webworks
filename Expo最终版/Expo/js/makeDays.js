@@ -13,9 +13,9 @@ $("#addressStr").text(localStorage.getItem("addressStr"));
 var officeAddresNode  = $("#footer .contact .phone p:nth-child(1)");
 var officeTelNode     = $("#footer .contact .phone p:nth-child(2)");
 var officeAddressText = "地址： " + localStorage.getItem("officeAddr");
-var officeTelText     = "电话： " + localStorage.getItem("officeTel") + "  邮箱：735670201@qq.com";
+var officeTelMailText = "电话： " + localStorage.getItem("officeTel") + "  邮箱：  6" + localStorage.getItem("officeMail");
 
-officeTelNode.text(officeTelText);
+officeTelNode.text(officeTelMailText);
 officeAddresNode.text(officeAddressText);
 
 // 计算距开幕的时间
