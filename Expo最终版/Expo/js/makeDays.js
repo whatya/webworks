@@ -7,16 +7,6 @@ logo.click(function(){
 $("#timeStr").text(localStorage.getItem("timeStr"));
 $("#addressStr").text(localStorage.getItem("addressStr"));
 
-// 设置页脚地址和电话
-// $("#timeStr").text(localStorage.getItem("officeTel"));
-// $("#addressStr").text(localStorage.getItem("officeAddr"));
-var officeAddresNode  = $("#footer .contact .phone p:nth-child(1)");
-var officeTelNode     = $("#footer .contact .phone p:nth-child(2)");
-var officeAddressText = "地址： " + localStorage.getItem("officeAddr");
-var officeTelMailText = "电话： " + localStorage.getItem("officeTel") + "  邮箱：  6" + localStorage.getItem("officeMail");
-
-officeTelNode.text(officeTelMailText);
-officeAddresNode.text(officeAddressText);
 
 // 计算距开幕的时间
 function caculateRemainDays() {
@@ -35,11 +25,34 @@ function caculateRemainDays() {
 
 caculateRemainDays();
 
-// var tag="";
-// var untag="";
-// var jsf=".ad7.com/u/1/8df9acc36da73f47622b238b08d3036e.js";
-// var ad7 = document.createElement("script");
-// ad7.id="_mutmzc";
-// if (/^https/.test(location.href)) {ad7.src ='https://js-ssl'+jsf+'?tag='+tag+'&untag='+untag;} else {ad7.src = 'http://js'+jsf+'?tag='+tag+'&untag='+untag;}
-// var s = document.getElementsByTagName("script")[0];
-// s.parentNode.insertBefore(ad7, s);
+function fillFooter() {
+
+  $.ajax(  
+    {  
+        type:'get',  
+        url : 'http://www.sportswuhan.com/api/homepage/base',  
+        dataType : 'text json',  
+        jsonp:"jsoncallback",  
+        success  : function(response) {  
+            
+        var tel = data.tele;
+        var address =  data.addre;
+        var mail = data.mail;
+
+        // 设置页脚地址和电话
+        var officeAddresNode  = $("#footer .contact .phone p:nth-child(1)");
+        var officeTelNode     = $("#footer .contact .phone p:nth-child(2)");
+
+        var officeAddressText = "地址： " + address;
+        var officeTelMailText = "电话： " + tel + "  邮箱：  " + mail;
+
+        officeTelNode.text(officeTelMailText);
+        officeAddresNode.text(officeAddressText);
+
+        },  
+        error : function() {  
+            alert('fail');  
+        }  
+    }  
+  );
+}
